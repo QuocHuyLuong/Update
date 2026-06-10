@@ -1,0 +1,2220 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLB Guitar G4U - Đại học Tôn Đức Thắng</title>
+  <meta name="description" content="Trang web chính thức của CLB Guitar G4U - Đại học Tôn Đức Thắng. Nơi kết nối những tâm hồn yêu âm nhạc, đam mê tiếng đàn guitar, giao lưu học hỏi và lan tỏa những giai điệu cảm xúc." />
+  <meta name="keywords" content="CLB Guitar G4U, G4U, Guitar TDTU, Đại học Tôn Đức Thắng, câu lạc bộ guitar, guitar sinh viên" />
+  <link rel="icon" type="image/jpeg" href="src/assets/Logo.jpg" />
+  
+  <!-- Hls.js for HLS streaming support -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #e83b4d;
+      --color-primary-dark: #c73b5c;
+      --color-secondary: #633a87;
+      --color-secondary-light: #853a78;
+      --color-accent: #a83b68;
+      --color-accent-light: #cd92ae;
+      --color-bg-base: #fcf6f9;
+      --color-bg-white: #ffffff;
+      --color-bg-card: rgba(255, 255, 255, 0.75);
+      --color-border: #f0deea;
+      --color-text: #52475c;
+      --color-text-title: #2c1a3d;
+      --color-text-light: #8a7c93;
+      
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --shadow-sm: 0 2px 8px rgba(99, 58, 135, 0.05);
+      --shadow-md: 0 8px 24px rgba(99, 58, 135, 0.08);
+      --shadow-lg: 0 16px 48px rgba(99, 58, 135, 0.12);
+      --shadow-glow: 0 0 20px rgba(232, 59, 77, 0.45);
+      --shadow-glow-purple: 0 0 20px rgba(99, 58, 135, 0.35);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg-base);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(249, 233, 241, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(205, 146, 174, 0.25) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(99, 58, 135, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg-base);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-accent-light);
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-bg-base);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-accent);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-text-title);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header p {
+      margin-top: 12px;
+      color: var(--color-text-light);
+      font-size: 1.125rem;
+    }
+
+    .glass-panel {
+      background: var(--color-bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-md);
+    }
+
+    .glass-panel-hover {
+      transition: var(--transition);
+    }
+
+    .glass-panel-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(232, 59, 77, 0.25);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: var(--color-bg-white);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 59, 77, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      background: var(--color-bg-white);
+      color: var(--color-secondary);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: var(--color-bg-base);
+      border-color: var(--color-accent-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-icon-only {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      padding: 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .gradient-text-alt {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--color-text-title);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      color: var(--color-text-title);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--color-primary);
+      background: var(--color-bg-white);
+      box-shadow: 0 0 0 3px rgba(232, 59, 77, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .visualizer-container {
+      position: relative;
+      width: 100%;
+      height: 140px;
+      background: radial-gradient(circle at center, #1b0d26 0%, #0d0615 100%);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6), var(--shadow-glow-purple);
+      border: 1px solid rgba(133, 58, 120, 0.3);
+    }
+
+    .visualizer-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(13, 6, 21, 0.1) 0%, transparent 50%, rgba(13, 6, 21, 0.4) 100%);
+    }
+
+    .visualizer-glow {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(232, 59, 77, 0.15) 0%, transparent 70%);
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      animation: pulse-glow 4s infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      0% { opacity: 0.6; transform: translateX(-50%) scale(0.9); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .flex-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flex-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Header floating styles */
+    #site-header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 1200px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(99, 58, 135, 0.08);
+      padding: 12px 24px !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000 !important;
+    }
+    #site-header.scrolled {
+      top: 10px;
+      background: rgba(255, 255, 255, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 12px 40px -10px rgba(99, 58, 135, 0.18);
+      padding: 8px 24px !important;
+    }
+    #site-header.nav-hidden {
+      transform: translate(-50%, -120px) !important;
+      opacity: 0;
+    }
+    .nav-link-item {
+      position: relative;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-text-title) !important;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 16px;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: 9999px;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-link-item:hover {
+      color: var(--color-primary) !important;
+      background: rgba(232, 59, 77, 0.05) !important;
+    }
+    .nav-link-item:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+    .nav-cta-btn {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: #fff !important;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px -3px rgba(232, 59, 77, 0.3);
+      transition: var(--transition);
+      margin-left: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -4px rgba(232, 59, 77, 0.5), 0 0 0 3px rgba(232, 59, 77, 0.12);
+    }
+    .nav-cta-btn:active {
+      transform: translateY(0);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+    .logo-img {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .logo-container:hover .logo-img {
+      transform: scale(1.08) rotate(8deg);
+    }
+    .mobile-menu-drawer {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      left: auto;
+      width: 220px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(99, 58, 135, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      z-index: 1001;
+    }
+    @media (min-width: 769px) {
+      .mobile-menu-drawer { display: none !important; }
+    }
+    .mobile-link {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-title) !important;
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      transition: all 0.2s ease;
+      display: block;
+      text-align: left;
+      width: 100%;
+    }
+    .mobile-link:hover {
+      background: rgba(232, 59, 77, 0.05) !important;
+      color: var(--color-primary) !important;
+      padding-left: 20px !important;
+    }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    @media (max-width: 768px) {
+      #site-header {
+        top: 12px;
+        width: calc(100% - 24px);
+        padding: 10px 16px !important;
+      }
+      #site-header.scrolled {
+        top: 6px;
+        padding: 8px 16px !important;
+      }
+    }
+
+
+    /* Gallery Grid zoom */
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1 !important;
+    }
+
+    /* Department hover effects */
+    .dept-card {
+      position: relative;
+      transition: var(--transition);
+    }
+    .dept-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg) !important;
+      border-color: var(--color-primary) !important;
+    }
+    .dept-card:hover .dept-icon-box {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    /* Playlist items */
+    .playlist-item.active {
+      background-color: rgba(232, 59, 77, 0.08) !important;
+      border-color: var(--color-primary) !important;
+    }
+    .playlist-item {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .playlist-item:hover {
+      background-color: rgba(99, 58, 135, 0.08) !important;
+      border-color: rgba(99, 58, 135, 0.3) !important;
+      transform: translateX(4px);
+    }
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--color-primary) !important;
+      outline-offset: 2px !important;
+    }
+    .glass-panel-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* Modern Hero Option A Styles */
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .hero-video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(252, 246, 249, 0.85) 0%, rgba(252, 246, 249, 0.7) 50%, var(--color-bg-base) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      padding: 24px;
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      width: 100%;
+      max-width: 768px;
+      margin: 40px auto 0;
+      box-shadow: var(--shadow-md);
+    }
+    .hero-stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-right: 1px solid var(--color-border);
+    }
+    .hero-stat-item:last-child {
+      border-right: none;
+    }
+    .hero-stat-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-text-title);
+      font-family: var(--font-heading);
+      line-height: 1.2;
+    }
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    
+    /* Infinite Slider */
+    .infinite-slider-section {
+      width: 100%;
+      background: rgba(240, 222, 234, 0.25);
+      border-top: 1px solid rgba(240, 222, 234, 0.6);
+      border-bottom: 1px solid rgba(240, 222, 234, 0.6);
+      padding: 16px 0;
+      position: relative;
+      z-index: 10;
+      margin-top: auto;
+    }
+    .infinite-slider-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    .infinite-slider-track {
+      display: flex;
+      gap: 48px;
+      width: max-content;
+      animation: scrollInfinite 35s linear infinite;
+    }
+    .slider-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 9999px;
+      color: var(--color-text-title);
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+      box-shadow: var(--shadow-sm);
+    }
+    @keyframes scrollInfinite {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .progressive-blur-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 96px;
+      background: linear-gradient(to right, #fcf6f9 20%, transparent);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .progressive-blur-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 96px;
+      background: linear-gradient(to left, #fcf6f9 20%, transparent);
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 8px;
+        padding: 16px;
+        border-radius: 16px;
+      }
+      .hero-stat-item:nth-child(2) {
+        border-right: none;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.85rem; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 70px 0; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .grid-2 { grid-template-columns: 1fr; gap: 24px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .container { padding: 0 16px; }
+      .flex-between {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+      .desktop-only { display: none !important; }
+      .mobile-only { display: block !important; }
+      #hero {
+        padding-top: 140px !important;
+        min-height: auto !important;
+        display: block !important;
+        text-align: center;
+      }
+      .hero-image-container { height: 350px !important; margin-top: 40px; }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-only { display: none !important; }
+      .desktop-only { display: flex !important; }
+    }
+
+    /* Merchandise Custom Styles & Detail Modal */
+    .merch-img {
+      transition: var(--transition);
+    }
+    .glass-panel-hover:hover .merch-img {
+      transform: scale(1.06);
+    }
+    .merch-hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(99, 58, 135, 0.4);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 2;
+    }
+    .glass-panel-hover:hover .merch-hover-overlay {
+      opacity: 1 !important;
+    }
+    @media (max-width: 768px) {
+      .merch-modal-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .merch-modal-grid img {
+        height: 250px !important;
+        object-fit: cover !important;
+      }
+    }
+
+    /* Departments Custom Styles & Detail Modal */
+    .dept-hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(99, 58, 135, 0.4);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 2;
+    }
+    .dept-card:hover .dept-hover-overlay {
+      opacity: 1 !important;
+    }
+    @media (max-width: 768px) {
+      .dept-modal-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .dept-modal-grid img {
+        height: 250px !important;
+        object-fit: cover !important;
+      }
+    }
+
+    /* Scroll Reveal Animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Directional reveals */
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+    .reveal-right {
+      transform: translateX(40px);
+    }
+    .reveal-scale {
+      transform: scale(0.95);
+    }
+    
+    .reveal-left.revealed,
+    .reveal-right.revealed {
+      transform: translateX(0);
+    }
+    .reveal-scale.revealed {
+      transform: scale(1);
+    }
+
+    /* Staggered transition delays */
+    .delay-100 { transition-delay: 100ms !important; }
+    .delay-200 { transition-delay: 200ms !important; }
+    .delay-300 { transition-delay: 300ms !important; }
+    .delay-400 { transition-delay: 400ms !important; }
+    .delay-500 { transition-delay: 500ms !important; }
+    
+    /* Reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-reveal {
+        transform: none !important;
+        transition: opacity 0.3s ease !important;
+      }
+      #hero-scroll-indicator div div {
+        animation: none !important;
+      }
+      #hero-scroll-indicator span {
+        animation: none !important;
+      }
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    @keyframes scroll-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(to right, var(--color-primary), var(--color-accent), var(--color-secondary)); width: 0%; z-index: 9999; box-shadow: var(--shadow-glow); transition: width 0.1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="container flex-between" style="flex-direction: row; padding: 0;">
+      <a href="#" class="flex-center logo-container" style="gap: 10px; text-decoration: none;">
+        <img src="src/assets/Logo.jpg" alt="CLB Guitar G4U Logo" class="logo-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primary);" />
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <span style="font-size: 0.62rem; font-weight: 800; color: var(--color-secondary-light); letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 1px; line-height: 1;">Câu lạc bộ</span>
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem; color: var(--color-text-title); line-height: 1.1; letter-spacing: 0.2px;">Guitar <span class="gradient-text">G4U</span></span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-only" style="display: flex; align-items: center; gap: 4px;">
+        <a href="#about" class="nav-link-item">Giới thiệu</a>
+        <a href="#events" class="nav-link-item">Sự kiện</a>
+        <a href="#gallery" class="nav-link-item">Thư viện</a>
+        <a href="#departments" class="nav-link-item">Các ban</a>
+        <a href="#music-room" class="nav-link-item">G4U Studio</a>
+        <a href="#merchandise" class="nav-link-item">Merchandise</a>
+        <a href="#contact" class="nav-link-item">Liên hệ</a>
+        <a href="javascript:void(0);" class="nav-cta-btn recruitment-trigger">Ứng tuyển</a>
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-toggle" class="mobile-only" style="background: transparent; border: none; color: var(--color-text-title); cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="mobile-menu-drawer" style="display: none;">
+      <a href="#about" class="mobile-link">Giới thiệu</a>
+      <a href="#events" class="mobile-link">Sự kiện</a>
+      <a href="#gallery" class="mobile-link">Thư viện</a>
+      <a href="#departments" class="mobile-link">Các ban</a>
+      <a href="#music-room" class="mobile-link">G4U Studio</a>
+      <a href="#merchandise" class="mobile-link">Merchandise</a>
+      <a href="#contact" class="mobile-link">Liên hệ</a>
+      <a href="javascript:void(0);" class="nav-cta-btn recruitment-trigger" style="width: 100%; text-align: center; justify-content: center; margin-left: 0; margin-top: 8px;">Ứng tuyển</a>
+    </div>
+  </header>
+
+  <main style="flex-grow: 1;">
+    
+    <!-- HERO SECTION -->
+    <section id="hero" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding-top: 180px; padding-bottom: 48px; overflow: hidden; background: var(--color-bg-base); position: relative;">
+      <!-- Background Video Layer -->
+      <video autoplay loop muted playsinline class="hero-video-bg">
+        <source src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+
+      <div class="container" style="position: relative; z-index: 10; margin-top: auto; margin-bottom: auto;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
+          <!-- Sparkle Badge -->
+          <div class="glass-panel animate-sparkle scroll-reveal" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: var(--radius-full); margin-bottom: 24px; border: 1px solid rgba(232, 59, 77, 0.3); background: rgba(232, 59, 77, 0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-heading); letter-spacing: 1px; text-transform: uppercase;">CLB GUITAR ĐẠI HỌC TÔN ĐỨC THẮNG</span>
+          </div>
+
+          <h1 class="scroll-reveal delay-100" style="color: var(--color-text-title); margin-bottom: 24px; font-size: 3.5rem; line-height: 1.15; font-family: var(--font-heading);">
+            Nơi kết nối đam mê <br>
+            <span class="gradient-text-alt" style="background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Lan toàn âm nhạc</span>
+          </h1>
+
+          <p class="scroll-reveal delay-200" style="font-size: 1.125rem; color: var(--color-text); margin-bottom: 40px; max-width: 650px; line-height: 1.6;">
+            Chào mừng bạn đến với mái nhà chung G4U. Chúng mình cùng chung nhịp đập âm nhạc, nơi những tiếng đàn guitar hòa nhịp với nhiệt huyết tuổi trẻ của sinh viên TDTU.
+          </p>
+
+          <div class="scroll-reveal delay-300" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 48px;">
+            <a href="#music-room" class="btn btn-primary" style="padding: 14px 32px;">
+              <span>Nghe G4U Đàn</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="white"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            </a>
+            <a href="#about" class="btn btn-secondary" style="background: transparent; border: 1px solid rgba(99, 58, 135, 0.25); color: var(--color-secondary); padding: 14px 32px;">
+              <span>Tìm hiểu về CLB</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Glassmorphic Stats bar -->
+          <div class="hero-stats-bar scroll-reveal delay-400">
+            <div class="hero-stat-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 6px;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+              <span class="hero-stat-value">2011</span>
+              <span class="hero-stat-label">Năm thành lập</span>
+            </div>
+            <div class="hero-stat-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 6px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span class="hero-stat-value">10+</span>
+              <span class="hero-stat-label">Năm hoạt động</span>
+            </div>
+            <div class="hero-stat-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" style="margin-bottom: 6px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span class="hero-stat-value">500+</span>
+              <span class="hero-stat-label">Thành viên thế hệ</span>
+            </div>
+            <div class="hero-stat-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" style="margin-bottom: 6px;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              <span class="hero-stat-value">18K+</span>
+              <span class="hero-stat-label">Người theo dõi</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bouncing Scroll Indicator -->
+      <div id="hero-scroll-indicator" style="position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; z-index: 10;" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+        <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--color-text-light); font-family: var(--font-heading); font-weight: 700; animation: scroll-pulse 2s infinite;">Cuộn xuống</span>
+        <div style="width: 20px; height: 34px; border-radius: 9999px; border: 2px solid rgba(232, 59, 77, 0.4); display: flex; justify-content: center; padding: 4px;">
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); animation: scroll-bounce 1.5s infinite ease-in-out;"></div>
+        </div>
+      </div>
+
+      <!-- Infinite Ticker -->
+      <div class="infinite-slider-section">
+        <div class="infinite-slider-container">
+          <div class="infinite-slider-track">
+            <div class="slider-pill">🎸 Live Shows</div>
+            <div class="slider-pill">🎵 Live Sessions</div>
+            <div class="slider-pill">🎤 Vocal & Chorus</div>
+            <div class="slider-pill">🥁 Drums</div>
+            <div class="slider-pill">🎹 Keyboard</div>
+            <div class="slider-pill">⚡ Guitar</div>
+            <div class="slider-pill">✨ Liveshows</div>
+            <div class="slider-pill">🤝 Connections</div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="slider-pill">🎸 Live Shows</div>
+            <div class="slider-pill">🎵 Live Sessions</div>
+            <div class="slider-pill">🎤 Vocal & Chorus</div>
+            <div class="slider-pill">🥁 Drums</div>
+            <div class="slider-pill">🎹 Keyboard</div>
+            <div class="slider-pill">⚡ Guitar</div>
+            <div class="slider-pill">✨ Liveshows</div>
+            <div class="slider-pill">🤝 Connections</div>
+          </div>
+          <div class="progressive-blur-left"></div>
+          <div class="progressive-blur-right"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" style="background: var(--color-bg-white);">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <h2>Về <span class="gradient-text">G4U Guitar Club</span></h2>
+          <p>Mái nhà chung của những tâm hồn nghệ sĩ sinh viên Đại học Tôn Đức Thắng</p>
+        </div>
+
+        <div class="grid-2" style="align-items: center; margin-bottom: 80px;">
+          <div class="flex-center scroll-reveal reveal-left">
+            <div style="position: relative; width: 320px; height: 320px; border-radius: 50%; background: linear-gradient(135deg, rgba(232, 59, 77, 0.1), rgba(99, 58, 135, 0.1)); display: flex; align-items: center; justify-content: center; padding: 20px;">
+              <div style="position: absolute; top: -10px; right: -10px; width: 80px; height: 80px; border-radius: 50%; background: var(--color-bg-base); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              </div>
+              <img src="src/assets/mascot.png" alt="CLB G4U Mascot" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow-lg); border: 8px solid white;" />
+            </div>
+          </div>
+
+          <div style="text-align: left;" class="scroll-reveal reveal-right delay-100">
+            <h3 style="margin-bottom: 20px; color: var(--color-text-title); font-size: 1.35rem; line-height: 1.4;"><!-- ABOUT_SLOGAN_START -->"Chúng mình là G4U" – Trạm dừng chân của những tâm hồn yêu nhạc tại TDTU! 🎸<!-- ABOUT_SLOGAN_END --></h3>
+            <p style="color: var(--color-text); margin-bottom: 16px; font-size: 1rem; line-height: 1.6;">
+              <!-- ABOUT_DESC_START -->Không chỉ là sân chơi rèn luyện kỹ năng cho các bạn đam mê Guitar, G4U còn là mái nhà chung rộng mở đón chào các tài năng Vocal, Cajon, Keyboard, Bass,... cùng nhau "cháy" hết mình trong các buổi sinh hoạt hàng tuần, hát giao lưu sảnh trường và cả những liveshow hoành tráng.<!-- ABOUT_DESC_END -->
+            </p>
+            <p style="color: var(--color-text-title); margin-bottom: 12px; font-size: 1rem; font-weight: 700;">
+              Và để làm nên những sân khấu bùng nổ ấy, không thể thiếu bộ ba quyền lực đứng sau cánh gà:
+            </p>
+            <ul style="list-style-type: none; padding-left: 0; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;">
+              <li style="font-size: 0.95rem; color: var(--color-text); line-height: 1.5;">
+                <strong style="color: var(--color-primary);">• Ban Sự kiện:</strong> <!-- ABOUT_EVENT_BRIEF_START -->Những "tổng tư lệnh" năng nổ, lo liệu từ A-Z để mọi chương trình luôn mượt mà và hoành tráng.<!-- ABOUT_EVENT_BRIEF_END -->
+              </li>
+              <li style="font-size: 0.95rem; color: var(--color-text); line-height: 1.5;">
+                <strong style="color: var(--color-secondary);">• Ban Truyền thông:</strong> <!-- ABOUT_MEDIA_BRIEF_START -->Đội ngũ "phù thủy" sáng tạo nội dung, hình ảnh giúp lan tỏa mạnh mẽ ngọn lửa đam mê của G4U.<!-- ABOUT_MEDIA_BRIEF_END -->
+              </li>
+              <li style="font-size: 0.95rem; color: var(--color-text); line-height: 1.5;">
+                <strong style="color: var(--color-accent);">• Ban Đối ngoại:</strong> <!-- ABOUT_PR_BRIEF_START -->Những "đại sứ" nhạy bén, chuyên săn "deal" xịn và giữ vai trò cầu nối vững chắc với các đối tác, nhà tài trợ.<!-- ABOUT_PR_BRIEF_END -->
+              </li>
+            </ul>
+            <p style="color: var(--color-text-title); margin-bottom: 24px; font-size: 1rem; line-height: 1.6; font-weight: 600;">
+              <!-- ABOUT_CLOSING_START -->Dù bạn đam mê tỏa sáng dưới ánh đèn sân khấu hay thích làm "hậu phương" vững chắc vạch định chiến lược, G4U luôn có một vị trí dành riêng cho bạn. Cùng gia nhập và viết nên thanh xuân rực rỡ tại TDTU nhé!<!-- ABOUT_CLOSING_END -->
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="m11.9 12.1 4.514-4.514"/><path d="M20.1 2.3a1 1 0 0 0-1.4 0l-1.114 1.114A2 2 0 0 0 17 4.828v1.344a2 2 0 0 1-.586 1.414A2 2 0 0 1 17.828 7h1.344a2 2 0 0 0 1.414-.586L21.7 5.3a1 1 0 0 0 0-1.4z"/><path d="m6 16 2 2"/><path d="M8.23 9.85A3 3 0 0 1 11 8a5 5 0 0 1 5 5 3 3 0 0 1-1.85 2.77l-.92.38A2 2 0 0 0 12 18a4 4 0 0 1-4 4 6 6 0 0 1-6-6 4 4 0 0 1 4-4 2 2 0 0 0 1.85-1.23z"/></svg>
+                <span style="font-weight: 500;">Biểu diễn tại các show trong và ngoài trường</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+                <span style="font-weight: 500;">Quay và dựng các clip cover, livesession</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+                <span style="font-weight: 500;">Giao lưu nghệ thuật</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/></svg>
+                <span style="font-weight: 500;">Tổ chức các hoạt động xã hội</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid-3">
+          <div class="glass-panel glass-panel-hover scroll-reveal delay-100" style="padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-bg-base); display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <h4 style="font-size: 1.2rem; color: var(--color-text-title);">Âm nhạc</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5;">Nơi đam mê được đánh thức, khơi dậy tinh thần sáng tạo và thăng hoa cùng những giai điệu acoustic mộc mạc.</p>
+          </div>
+          
+          <div class="glass-panel glass-panel-hover scroll-reveal delay-200" style="padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-bg-base); display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4 style="font-size: 1.2rem; color: var(--color-text-title);">Kết nối</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5;">Xây dựng một mái nhà chung G4U, kết nối những trái tim yêu nhạc và tạo dựng những tình bạn đẹp đẽ thời sinh viên.</p>
+          </div>
+
+          <div class="glass-panel glass-panel-hover scroll-reveal delay-300" style="padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-bg-base); display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h4 style="font-size: 1.2rem; color: var(--color-text-title);">Phát triển</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5;">Không ngừng rèn luyện kỹ năng âm nhạc, hoàn thiện bản thân, tự tin thể hiện cá tính trên các sân khấu lớn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section id="events" style="background: var(--color-bg-base);">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <h2>Sự kiện & <span class="gradient-text-alt">Hoạt động nổi bật</span></h2>
+          <p>Cùng nhìn lại những chương trình âm nhạc đặc sắc và kế hoạch sắp tới của G4U</p>
+        </div>
+
+        <div class="grid-3" id="events-grid">
+          <!-- Dynamically loaded events will be injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" style="background: var(--color-bg-white);">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <h2>Thư viện <span class="gradient-text">Khoảnh khắc G4U</span></h2>
+          <p>Lưu giữ những giây phút bùng nổ trên sân khấu và những hoạt động đầy ắp tiếng cười</p>
+        </div>
+
+        <!-- Filters -->
+        <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap;" class="scroll-reveal delay-100">
+          <button class="filter-btn active" data-category="all" style="padding: 8px 20px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: var(--transition); border: 1px solid var(--color-primary); background-color: var(--color-primary); color: #fff;">Tất cả</button>
+          <button class="filter-btn" data-category="liveshow" style="padding: 8px 20px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: var(--transition); border: 1px solid var(--color-border); background-color: transparent; color: var(--color-text-title);">Liveshow</button>
+          <button class="filter-btn" data-category="perform" style="padding: 8px 20px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: var(--transition); border: 1px solid var(--color-border); background-color: transparent; color: var(--color-text-title);">Biểu diễn</button>
+          <button class="filter-btn" data-category="life" style="padding: 8px 20px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: var(--transition); border: 1px solid var(--color-border); background-color: transparent; color: var(--color-text-title);">Hoạt động</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid-3" id="gallery-grid" style="min-height: 350px;">
+          <!-- Dynamically loaded gallery items will be injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPARTMENTS SECTION -->
+    <section id="departments" style="background: var(--color-bg-base); padding: 80px 0;">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <h2>Các ban <span class="gradient-text-alt">Hoạt động tại G4U</span></h2>
+          <p>4 mảnh ghép hoàn hảo phối hợp chặt chẽ để tạo nên một tập thể câu lạc bộ chuyên nghiệp và tràn đầy năng lượng</p>
+        </div>
+
+        <div class="grid-2" style="max-width: 1000px; margin: 0 auto; gap: 32px; alignItems: stretch;">
+          
+          <!-- Ban Chuyen Mon -->
+          <div class="glass-panel dept-card scroll-reveal reveal-left" style="background: var(--color-bg-white); border-radius: var(--radius-lg); padding: 0; text-align: left; box-shadow: var(--shadow-md); border: 1px solid rgba(255, 255, 255, 0.6); display: flex; flex-direction: column; overflow: hidden; justify-content: space-between; transition: var(--transition);">
+            <div style="display: flex; flex-direction: column; height: 100%;">
+              <div style="position: relative; overflow: hidden; width: 100%;">
+                <img src="public/departments/chuyen_mon.jpg" alt="Ban Chuyên môn" class="dept-image" style="width: 100%; height: auto; display: block; transition: var(--transition);" />
+              </div>
+              <div style="padding: 32px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                    <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(99, 58, 135, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Chuyên môn</h3>
+                      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); fontFamily: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px;"><!-- DEPT_CHUYEN_MON_SUBTITLE_START -->Trình diễn nhạc cụ & Vocal<!-- DEPT_CHUYEN_MON_SUBTITLE_END --></span>
+                    </div>
+                  </div>
+                  <p style="font-size: 0.925rem; color: var(--color-text); line-height: 1.6; margin-bottom: 24px;"><!-- DEPT_CHUYEN_MON_DESC_START -->Dành cho những bạn có năng khiếu về nhạc cụ và ca hát, cùng tình yêu sâu sắc với âm nhạc. Đây là nơi bạn sẽ được khám phá nhiều điều mới mẻ và thú vị trong thế giới âm nhạc và là cơ hội để bạn mang những thanh âm màu sắc đến với mọi người.<!-- DEPT_CHUYEN_MON_DESC_END --></p>
+                  <!-- Tasks List removed as requested -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ban Su Kien -->
+          <div class="glass-panel dept-card scroll-reveal reveal-right" style="background: var(--color-bg-white); border-radius: var(--radius-lg); padding: 0; text-align: left; box-shadow: var(--shadow-md); border: 1px solid rgba(255, 255, 255, 0.6); display: flex; flex-direction: column; overflow: hidden; justify-content: space-between; transition: var(--transition);">
+            <div style="display: flex; flex-direction: column; height: 100%;">
+              <div style="position: relative; overflow: hidden; width: 100%;">
+                <img src="public/departments/su_kien.jpg" alt="Ban Sự kiện" class="dept-image" style="width: 100%; height: auto; display: block; transition: var(--transition);" />
+              </div>
+              <div style="padding: 32px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                    <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(232, 59, 77, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Sự kiện</h3>
+                      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); fontFamily: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px;"><!-- DEPT_SU_KIEN_SUBTITLE_START -->Ý tưởng & Quản lý hậu cần<!-- DEPT_SU_KIEN_SUBTITLE_END --></span>
+                    </div>
+                  </div>
+                  <p style="font-size: 0.925rem; color: var(--color-text); line-height: 1.6; margin-bottom: 24px;"><!-- DEPT_SU_KIEN_DESC_START -->Phù hợp với các bạn đam mê và muốn thử sức trong việc lên ý tưởng, lập kế hoạch và tham gia tổ chức, điều phối các sự kiện - những con người đứng sau ánh đèn sân khấu, biến các ý tưởng thành hiện thực. Tại đây, bạn sẽ được trải nghiệm những khía cạnh đầy thú vị của lĩnh vực sự kiện.<!-- DEPT_SU_KIEN_DESC_END --></p>
+                  <!-- Tasks List removed as requested -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ban Truyen Thong -->
+          <div class="glass-panel dept-card scroll-reveal reveal-left" style="background: var(--color-bg-white); border-radius: var(--radius-lg); padding: 0; text-align: left; box-shadow: var(--shadow-md); border: 1px solid rgba(255, 255, 255, 0.6); display: flex; flex-direction: column; overflow: hidden; justify-content: space-between; transition: var(--transition);">
+            <div style="display: flex; flex-direction: column; height: 100%;">
+              <div style="position: relative; overflow: hidden; width: 100%;">
+                <img src="public/departments/truyen_thong.jpg" alt="Ban Truyền thông" class="dept-image" style="width: 100%; height: auto; display: block; transition: var(--transition);" />
+              </div>
+              <div style="padding: 32px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                    <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(99, 58, 135, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+                        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Truyền thông</h3>
+                      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); fontFamily: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px;"><!-- DEPT_TRUYEN_THONG_SUBTITLE_START -->Sáng tạo nội dung & Hình ảnh<!-- DEPT_TRUYEN_THONG_SUBTITLE_END --></span>
+                    </div>
+                  </div>
+                  <p style="font-size: 0.925rem; color: var(--color-text); line-height: 1.6; margin-bottom: 24px;"><!-- DEPT_TRUYEN_THONG_DESC_START -->Dành cho các bạn có khả năng sáng tạo nội dung, viết lách, thiết kế, chỉnh sửa video, quay phim và muốn tự mình sản xuất các sản phẩm truyền thông. Đây là cơ hội để bạn khám phá và trải nghiệm thế giới đầy màu sắc của lĩnh vực media.<!-- DEPT_TRUYEN_THONG_DESC_END --></p>
+                  <!-- Tasks List removed as requested -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ban Doi Ngoai -->
+          <div class="glass-panel dept-card scroll-reveal reveal-right" style="background: var(--color-bg-white); border-radius: var(--radius-lg); padding: 0; text-align: left; box-shadow: var(--shadow-md); border: 1px solid rgba(255, 255, 255, 0.6); display: flex; flex-direction: column; overflow: hidden; justify-content: space-between; transition: var(--transition);">
+            <div style="display: flex; flex-direction: column; height: 100%;">
+              <div style="position: relative; overflow: hidden; width: 100%;">
+                <img src="public/departments/doi_ngoai.jpg" alt="Ban Đối ngoại" class="dept-image" style="width: 100%; height: auto; display: block; transition: var(--transition);" />
+              </div>
+              <div style="padding: 32px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                    <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(168, 59, 104, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                        <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                        <path d="m21 3 1 11h-2" />
+                        <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                        <path d="M3 4h8" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Đối ngoại</h3>
+                      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); fontFamily: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px;"><!-- DEPT_DOI_NGOAI_SUBTITLE_START -->Kết nối cộng đồng & Đối tác<!-- DEPT_DOI_NGOAI_SUBTITLE_END --></span>
+                    </div>
+                  </div>
+                  <p style="font-size: 0.925rem; color: var(--color-text); line-height: 1.6; margin-bottom: 24px;"><!-- DEPT_DOI_NGOAI_DESC_START -->Đại diện hình ảnh của CLB, chịu trách nhiệm kết nối với đối tác, doanh nghiệp và các tổ chức trong ngành âm nhạc. Ban Đối Ngoại không chỉ mang lại lợi ích về tài chính, truyền thông và chuyên môn mà còn tạo cơ hội nghề nghiệp cho thành viên CLB. Đồng thời, đây cũng là cầu nối gắn kết các thế hệ thành viên, góp phần xây dựng CLB phát triển bền vững.<!-- DEPT_DOI_NGOAI_DESC_END --></p>
+                  <!-- Tasks List removed as requested -->
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- G4U STUDIO SECTION -->
+    <section id="music-room" style="background: var(--color-bg-white); padding: 80px 0;">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <h2>G4U <span class="gradient-text">Studio</span></h2>
+          <p>Trải nghiệm những sản phẩm Live Session cực chất của G4Uer</p>
+        </div>
+
+        <div class="grid-2" style="align-items: stretch; max-width: 1000px; margin: 0 auto; gap: 32px;">
+          <!-- Left Panel -->
+          <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center;" class="scroll-reveal reveal-left">
+            <div id="video-container" class="glass-panel" style="overflow: hidden; border-radius: var(--radius-md); aspect-ratio: 16/9; background: #0d0615; box-shadow: var(--shadow-lg); border: 1px solid rgba(133, 58, 120, 0.3);">
+              <div id="video-player-container" style="width: 100%; height: 100%;">
+                <video id="video-player" src="" controls style="width: 100%; height: 100%; display: block; object-fit: contain;"></video>
+              </div>
+            </div>
+
+            <!-- Video detail panel -->
+            <div class="glass-panel" style="padding: 20px 24px; display: flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.9);">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(232, 59, 77, 0.08); display: flex; align-items: center; justify-content: center; color: var(--color-primary); flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              </div>
+              <div style="text-align: left; flex-grow: 1;">
+                <h4 id="active-video-title" style="font-size: 1.05rem; color: var(--color-text-title); margin-bottom: 4px; font-weight: 700;">Đang tải video...</h4>
+                <p id="active-video-date" style="font-size: 0.85rem; color: var(--color-text-light); display: flex; align-items: center; gap: 6px; margin: 0;"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Controls -->
+          <div class="glass-panel scroll-reveal reveal-right delay-100" style="padding: 32px 24px; background: rgba(255, 255, 255, 0.95); display: flex; flex-direction: column; gap: 20px; height: 100%; justify-content: flex-start;">
+            <!-- Description Card -->
+            <div style="text-align: left; background: rgba(99, 58, 135, 0.03); padding: 16px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-primary); display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> CREDIT
+              </span>
+              <p id="active-video-desc" style="font-size: 0.875rem; color: var(--color-text); line-height: 1.5; margin: 0;"></p>
+            </div>
+
+            <!-- Video Playlist list -->
+            <div id="video-playlist" style="display: flex; flex-direction: column; gap: 8px; overflow-y: auto; max-height: 280px;">
+              <!-- Populated via Javascript -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 24px; font-size: 0.85rem; color: var(--color-text-light);">
+        <p>💡 Chọn một clip từ danh sách bên phải để phát trực tiếp buổi biểu diễn Live Session.</p>
+      </div>
+    </section>
+
+    <!-- MERCHANDISE SECTION -->
+    <section id="merchandise" style="background: var(--color-bg-white); padding: 100px 0;">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="glass-panel" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: var(--radius-full); margin-bottom: 20px; border: 1px solid rgba(232, 59, 77, 0.25); background: rgba(232, 59, 77, 0.05);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span style="font-size: 0.825rem; font-weight: 700; color: var(--color-primary); font-family: var(--font-heading); letter-spacing: 0.5px;">ĐỘC QUYỀN TỪ G4U GUITAR CLUB</span>
+          </div>
+          <h2>G4U <span class="gradient-text">Merchandise</span></h2>
+          <p>Sở hữu những ấn phẩm và phụ kiện mang đậm dấu ấn và ngọn lửa đam mê của CLB Guitar G4U</p>
+        </div>
+
+        <div class="grid-2" id="merchandise-grid" style="max-width: 800px; margin: 0 auto; align-items: stretch;">
+          <!-- Dynamically loaded via Javascript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="background: var(--color-bg-base);">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <h2>Liên hệ & <span class="gradient-text">Kết nối với G4U</span></h2>
+          <p>Gửi câu hỏi hoặc lời nhắn hợp tác cho G4U để cùng kết nối đam mê và lan tỏa âm nhạc</p>
+        </div>
+
+        <div class="grid-2" style="gap: 48px; align-items: stretch;">
+          <!-- Info -->
+          <div class="glass-panel scroll-reveal reveal-left" style="padding: 40px 32px; background: var(--color-bg-white); display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+            <div>
+              <h3 style="font-size: 1.5rem; color: var(--color-text-title); margin-bottom: 16px;">Thông tin liên hệ</h3>
+              <p style="color: var(--color-text-light); margin-bottom: 32px;">Nếu bạn có những câu hỏi, book show hay muốn có những màn collabs siêu cháy với G4Uers thì đừng ngần ngại liên hệ với chúng mình nhé</p>
+
+              <div style="display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; align-items: flex-start; gap: 16px;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(232, 59, 77, 0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 1rem; color: var(--color-text-title); margin-bottom: 4px;">Địa chỉ sinh hoạt</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">19 Nguyễn Hữu Thọ, Tân Phong, Quận 7, Hồ Chí Minh City, Vietnam</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 16px;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(99, 58, 135, 0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 1rem; color: var(--color-text-title); margin-bottom: 4px;">Địa chỉ Email</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">clbguitardhtdt@gmail.com</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 16px;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(133, 58, 120, 0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                  </div>
+                  <div>
+                    <h4 style="font-size: 1rem; color: var(--color-text-title); margin-bottom: 4px;">Mạng xã hội chính</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Facebook: CLB Guitar G4U - Đại học Tôn Đức Thắng</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 1px solid var(--color-border); padding-top: 24px;">
+              <h4 style="font-size: 0.95rem; color: var(--color-text-title); margin-bottom: 16px;">Theo dõi G4U tại</h4>
+              <div style="display: flex; gap: 16px;">
+                <a href="https://www.facebook.com/clbguitarg4u.tdtu" target="_blank" rel="noreferrer" class="btn btn-secondary btn-icon-only"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                <a href="https://www.instagram.com/g4u_tdtu" target="_blank" rel="noreferrer" class="btn btn-secondary btn-icon-only"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                <a href="https://www.tiktok.com/@g4u_guitar" target="_blank" rel="noreferrer" class="btn btn-secondary btn-icon-only"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg></a>
+                <a href="https://www.youtube.com/@G4UGroup" target="_blank" rel="noreferrer" class="btn btn-secondary btn-icon-only"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48" /></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="glass-panel scroll-reveal reveal-right delay-100" style="padding: 40px 32px; background: var(--color-bg-white); position: relative;">
+            <h3 style="font-size: 1.5rem; color: var(--color-text-title); margin-bottom: 8px; text-align: left;">Gửi lời nhắn cho chúng mình</h3>
+            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 28px; text-align: left;">Nếu bạn muốn book show, hợp tác truyền thông, hay đơn giản là gửi một lời nhắn dễ thương cho G4U, hãy điền thông tin dưới đây nhé!</p>
+
+            <form id="recruit-form">
+              <div class="form-group">
+                <label class="form-label" for="fullName">Họ và Tên</label>
+                <input type="text" id="fullName" class="form-control" placeholder="Nguyễn Văn A" required />
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Số điện thoại</label>
+                  <input type="tel" id="phone" class="form-control" placeholder="09xxxxxxxx" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email liên hệ</label>
+                  <input type="email" id="email" class="form-control" placeholder="example@gmail.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Lời nhắn / Nội dung liên hệ</label>
+                <textarea id="message" class="form-control" placeholder="Nhập nội dung lời nhắn, đề xuất hợp tác hoặc câu hỏi của bạn tại đây..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 8px;">
+                <span>Gửi lời nhắn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+
+            <!-- Success Alert overlay -->
+            <div id="success-alert" style="display: none; position: absolute; top: 20px; left: 20px; right: 20px; padding: 16px; background: #ecfdf5; border: 1px solid #10b981; border-radius: var(--radius-sm); align-items: center; gap: 12px; box-shadow: var(--shadow-md); z-index: 10;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div style="text-align: left;">
+                <p style="color: #065f46; font-weight: 700; font-size: 0.9rem;">Gửi lời nhắn thành công!</p>
+                <p style="color: #047857; font-size: 0.8rem;">Cảm ơn bạn đã liên hệ với G4U. Ban chủ nhiệm sẽ phản hồi bạn qua email sớm nhất.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--color-text-title); color: rgba(255, 255, 255, 0.7); padding: 60px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: left;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px;">
+        <div style="max-width: 360px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <img src="src/assets/Logo.jpg" alt="G4U Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: #fff;">CLB GUITAR G4U</span>
+          </div>
+          <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6;">Nơi giao lưu, chia sẻ học tập và lan tỏa tình yêu âm nhạc của sinh viên trường Đại học Tôn Đức Thắng. Chúng mình đồng hành cùng đam mê của bạn.</p>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; font-size: 1rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;">Liên kết nhanh</h4>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+            <a href="#about" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: var(--transition);" class="footer-link">Giới thiệu</a>
+            <a href="#events" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: var(--transition);" class="footer-link">Sự kiện</a>
+            <a href="#gallery" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: var(--transition);" class="footer-link">Thư viện</a>
+            <a href="#departments" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: var(--transition);" class="footer-link">Các ban hoạt động</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; font-size: 1rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;">Hoạt động chính</h4>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem;">
+            <span>Biểu diễn tại các show trong và ngoài trường</span>
+            <span>Quay và dựng các clip cover, livesession</span>
+            <span>Giao lưu nghệ thuật</span>
+            <span>Tổ chức các hoạt động xã hội</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem;">
+        <span>© <span id="current-year"></span> CLB Guitar G4U - Đại học Tôn Đức Thắng. All rights reserved.</span>
+        <span style="display: flex; align-items: center; gap: 4px;">Made with <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="var(--color-primary)" stroke="var(--color-primary)"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> for G4U by Antigravity</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 10, 28, 0.95); z-index: 100; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out;">
+    <img id="lightbox-img" src="" alt="Zoomed" style="max-width: 90%; max-height: 90%; border-radius: var(--radius-md); box-shadow: 0 24px 50px rgba(0,0,0,0.5); border: 4px solid white;" />
+  </div>
+
+  <!-- MERCHANDISE DETAIL MODAL -->
+  <div id="merch-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 10, 28, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 1100; align-items: center; justify-content: center; padding: 16px;">
+    <div class="glass-panel" style="position: relative; width: 100%; max-width: 720px; background: rgba(255, 255, 255, 0.95); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 24px 50px rgba(99, 58, 135, 0.2); border: 1px solid rgba(255, 255, 255, 0.8); max-height: 90vh; display: flex; flex-direction: column;" onclick="event.stopPropagation()">
+      <!-- Close button -->
+      <button id="merch-modal-close" style="position: absolute; top: 16px; right: 16px; background: rgba(20, 10, 28, 0.05); border: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-text-title); transition: var(--transition); z-index: 10;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+      </button>
+
+      <!-- Scrollable Container -->
+      <div style="overflow-y: auto; display: flex; flex-direction: column;">
+        <div class="merch-modal-grid" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; align-items: stretch;">
+          <!-- Image -->
+          <div style="background: #faf5f8; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 100%; min-height: 320px;">
+            <img id="merch-modal-img" src="" alt="Sản phẩm" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <!-- Info -->
+          <div style="padding: 36px; display: flex; flex-direction: column; justify-content: center; text-align: left;">
+            <div id="merch-modal-tag" style="display: inline-block; background: rgba(99, 58, 135, 0.08); color: var(--color-secondary); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; margin-bottom: 16px; align-self: flex-start; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px;">
+              Ấn phẩm nội bộ
+            </div>
+            <h3 id="merch-modal-name" style="font-size: 1.4rem; color: var(--color-text-title); margin-bottom: 16px; font-weight: 800; line-height: 1.3;">Tên sản phẩm</h3>
+            <p id="merch-modal-desc" style="font-size: 0.95rem; color: var(--color-text); line-height: 1.6; margin-bottom: 32px;">Mô tả chi tiết sản phẩm.</p>
+            
+            <a href="#contact" id="merch-modal-contact-btn" class="btn btn-primary" style="width: 100%; padding: 12px 0; font-size: 0.875rem; font-weight: 700; text-align: center;">
+              Liên hệ giao lưu
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- RECRUITMENT NOTIFICATION MODAL -->
+  <div id="recruitment-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 10, 28, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 1200; align-items: center; justify-content: center; padding: 16px;">
+    <div class="glass-panel" style="position: relative; width: 100%; max-width: 480px; background: rgba(255, 255, 255, 0.95); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 24px 50px rgba(99, 58, 135, 0.2); border: 1px solid rgba(255, 255, 255, 0.8); padding: 40px 32px; text-align: center; display: flex; flex-direction: column; align-items: center;" onclick="event.stopPropagation()">
+      <!-- Close Button -->
+      <button id="recruitment-modal-close" style="position: absolute; top: 16px; right: 16px; background: rgba(20, 10, 28, 0.05); border: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-text-title); transition: var(--transition); z-index: 10;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+      </button>
+      <!-- Bell/Announce Icon -->
+      <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(99, 58, 135, 0.1); color: var(--color-secondary); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 10px 20px rgba(99, 58, 135, 0.15);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <!-- Title -->
+      <h3 style="font-size: 1.5rem; color: var(--color-text-title); font-weight: 800; margin-bottom: 16px; font-family: var(--font-heading);">Thông báo ứng tuyển</h3>
+      <!-- Message -->
+      <p style="font-size: 0.95rem; color: var(--color-text); line-height: 1.6; margin-bottom: 30px;">Các bạn hãy đón chờ thông tin về đợt tuyển thành viên tiếp theo trên facebook nha!</p>
+      <!-- Social Button -->
+      <a href="https://www.facebook.com" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px 0; font-size: 0.875rem; font-weight: 700; text-align: center; text-decoration: none;">Ghé thăm Fanpage Facebook</a>
+    </div>
+  </div>
+  <!-- RECRUITMENT CONFIG SCRIPT FOR LOCAL file:// RUNS -->
+  <script src="public/recruitment/recruitment.js"></script>
+
+  <script>
+    // Set Year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Scroll and Smart Header Hide/Show
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById('site-header');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      
+      // Scroll state background
+      if (currentScrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Hide on scroll down, show on scroll up (specifically for mobile browsers)
+      if (window.innerWidth <= 768) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          header.classList.add('nav-hidden');
+          closeMobileMenu();
+        } else {
+          header.classList.remove('nav-hidden');
+        }
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+      
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+
+    // Mobile Menu Toggle with dynamic icon changes
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const menuSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`;
+    const closeSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>`;
+
+    function closeMobileMenu() {
+      if (mobileMenu) {
+        mobileMenu.style.display = 'none';
+      }
+      if (mobileBtn) {
+        mobileBtn.innerHTML = menuSvg;
+      }
+    }
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isVisible = mobileMenu.style.display === 'flex';
+      if (isVisible) {
+        mobileMenu.style.display = 'none';
+        mobileBtn.innerHTML = menuSvg;
+      } else {
+        mobileMenu.style.display = 'flex';
+        mobileBtn.innerHTML = closeSvg;
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (header && !header.contains(event.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu when clicking any link inside (including CTA button)
+    const mobileLinks = document.querySelectorAll('.mobile-link, #mobile-menu .nav-cta-btn');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+
+    // Helper to adjust static department image paths when running on production root
+    function adjustDeptImages(isDev) {
+      const images = document.querySelectorAll('.dept-image');
+      images.forEach(img => {
+        const currentSrc = img.getAttribute('src');
+        if (!isDev && currentSrc && currentSrc.startsWith('public/')) {
+          img.setAttribute('src', currentSrc.substring(7)); // remove 'public/'
+        }
+      });
+    }
+
+    // Helper to load configurations dynamically and handle path corrections across environments
+    async function fetchConfigWithFallback(devUrl, prodUrl, fallbackData) {
+      // 1. Try devUrl (relative to project root, e.g. 'public/gallery/gallery.json' on Live Server)
+      try {
+        const res = await fetch(devUrl);
+        if (res.ok && res.headers.get('content-type')?.includes('application/json')) {
+          const data = await res.json();
+          // Adjust paths: prepend 'public' if path starts with '/'
+          if (Array.isArray(data)) {
+            const adjustedData = data.map(item => {
+              const newItem = { ...item };
+              for (const key in newItem) {
+                if (typeof newItem[key] === 'string' && newItem[key].startsWith('/')) {
+                  newItem[key] = 'public' + newItem[key];
+                }
+              }
+              return newItem;
+            });
+            return adjustedData;
+          } else if (data && typeof data === 'object') {
+            const adjustedData = { ...data };
+            for (const key in adjustedData) {
+              if (typeof adjustedData[key] === 'string' && adjustedData[key].startsWith('/')) {
+                adjustedData[key] = 'public' + adjustedData[key];
+              }
+            }
+            return adjustedData;
+          }
+          return data;
+        }
+      } catch (err) {
+        console.warn(`Could not load configuration from ${devUrl}, trying production path.`, err);
+      }
+
+      // 2. Try prodUrl (absolute to domain root, e.g. '/gallery/gallery.json' in production/dist root)
+      try {
+        const res = await fetch(prodUrl);
+        if (res.ok && res.headers.get('content-type')?.includes('application/json')) {
+          const data = await res.json();
+          // We successfully loaded from production URL, which means we should adjust static department images as well
+          adjustDeptImages(false);
+          return data;
+        }
+      } catch (err) {
+        console.warn(`Could not load configuration from ${prodUrl}, using local fallback.`, err);
+      }
+
+      // 3. Return fallback data
+      return fallbackData;
+    }
+
+    // Lightbox Modal Setup (Close listener only, items are added dynamically)
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+      lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
+    }
+
+    // Merchandise Modal Setup
+    const merchModal = document.getElementById('merch-modal');
+    const merchModalClose = document.getElementById('merch-modal-close');
+    const merchModalContactBtn = document.getElementById('merch-modal-contact-btn');
+    
+    if (merchModal) {
+      // Close on backdrop click
+      merchModal.addEventListener('click', () => {
+        merchModal.style.display = 'none';
+      });
+      
+      // Close on close button click
+      if (merchModalClose) {
+        merchModalClose.addEventListener('click', (e) => {
+          e.stopPropagation();
+          merchModal.style.display = 'none';
+        });
+      }
+      
+      // Close and scroll on contact button click
+      if (merchModalContactBtn) {
+        merchModalContactBtn.addEventListener('click', () => {
+          merchModal.style.display = 'none';
+        });
+      }
+    }
+
+    // Recruitment Modal and Click Logic
+    let recruitmentUrl = "";
+
+    function loadRecruitmentConfig() {
+      if (window.g4uRecruitmentConfig && window.g4uRecruitmentConfig.googleFormUrl !== undefined) {
+        recruitmentUrl = window.g4uRecruitmentConfig.googleFormUrl;
+        return;
+      }
+      fetchConfigWithFallback('public/recruitment/recruitment.json', '/recruitment/recruitment.json', {
+        googleFormUrl: ""
+      }).then(data => {
+        if (data && typeof data === 'object' && !Array.isArray(data)) {
+          recruitmentUrl = data.googleFormUrl || "";
+        }
+      });
+    }
+
+    function isValidRecruitmentUrl(url) {
+      if (!url) return false;
+      const u = url.trim().toLowerCase();
+      return u.startsWith("http://") || u.startsWith("https://");
+    }
+
+    // Recruitment Click Logic
+    document.querySelectorAll('.recruitment-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMobileMenu(); // close mobile menu drawer if open
+        if (isValidRecruitmentUrl(recruitmentUrl)) {
+          window.open(recruitmentUrl, '_blank');
+        } else {
+          // Show recruitment modal
+          const modal = document.getElementById('recruitment-modal');
+          if (modal) {
+            modal.style.display = 'flex';
+          }
+        }
+      });
+    });
+
+    // Recruitment Modal Close Setup
+    const recModal = document.getElementById('recruitment-modal');
+    const recModalClose = document.getElementById('recruitment-modal-close');
+    if (recModal) {
+      recModal.addEventListener('click', () => {
+        recModal.style.display = 'none';
+      });
+      if (recModalClose) {
+        recModalClose.addEventListener('click', (e) => {
+          e.stopPropagation();
+          recModal.style.display = 'none';
+        });
+      }
+    }
+
+    // Contact Form Simulation
+    const recruitForm = document.getElementById('recruit-form');
+    const successAlert = document.getElementById('success-alert');
+    if (recruitForm && successAlert) {
+      recruitForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        successAlert.style.display = 'flex';
+        recruitForm.reset();
+        setTimeout(() => {
+          successAlert.style.display = 'none';
+        }, 4000);
+      });
+    }
+
+    // --- VIDEO LOADING & LIST LOGIC ---
+    let videoList = [];
+    let currentVideoIndex = 0;
+
+    const activeVideoTitle = document.getElementById('active-video-title');
+    const activeVideoDate = document.getElementById('active-video-date');
+    const activeVideoDesc = document.getElementById('active-video-desc');
+    const videoPlaylist = document.getElementById('video-playlist');
+
+    function loadVideosMetadata() {
+      fetchConfigWithFallback('public/videos/videos.json', '/videos/videos.json', [
+        {
+          id: 1,
+          title: "Live Session: Cánh Diều Ước Mơ (Liveshow)",
+          description: "Bản trình diễn mộc mạc và giàu cảm xúc ghi hình trực tiếp tại Hội trường 6B TDTU. Phát trực tuyến qua luồng HLS Mux.",
+          videoUrl: "https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8",
+          date: "11/05/2026"
+        },
+        {
+          id: 2,
+          title: "Acoustic Show: Tuổi Hồng Thơ Ngây",
+          description: "Tiết mục guitar đệm hát mộc được thực hiện bởi Ban Chuyên môn CLB G4U. Nhúng từ YouTube.",
+          videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          date: "20/12/2025"
+        }
+      ]).then(data => {
+        if (Array.isArray(data)) {
+          videoList = data;
+          renderVideoListUI();
+        }
+      });
+    }
+
+    function renderVideoListUI() {
+      videoPlaylist.innerHTML = '';
+      if (videoList.length === 0) return;
+      
+      videoList.forEach((vid, idx) => {
+        const item = document.createElement('div');
+        item.className = `playlist-item ${currentVideoIndex === idx ? 'active' : ''}`;
+        item.style.display = 'flex';
+        item.style.alignItems = 'center';
+        item.style.justifyContent = 'space-between';
+        item.style.padding = '12px 16px';
+        item.style.borderRadius = 'var(--radius-sm)';
+        item.style.cursor = 'pointer';
+        item.style.transition = 'var(--transition)';
+        
+        if (currentVideoIndex === idx) {
+          item.style.backgroundColor = 'rgba(232, 59, 77, 0.08)';
+          item.style.borderColor = 'var(--color-primary)';
+        } else {
+          item.style.backgroundColor = 'transparent';
+          item.style.borderColor = 'transparent';
+        }
+
+        item.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 12px; text-align: left;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${currentVideoIndex === idx ? 'var(--color-secondary)' : 'var(--color-text-light)'}" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <div>
+              <span style="font-size: 0.9rem; font-weight: ${currentVideoIndex === idx ? '700' : '500'}; color: ${currentVideoIndex === idx ? 'var(--color-text-title)' : 'var(--color-text)'}">${vid.title}</span>
+              <span style="display: block; font-size: 0.75rem; color: var(--color-text-light);">${vid.date}</span>
+            </div>
+          </div>
+        `;
+        
+        item.addEventListener('click', () => {
+          selectVideo(idx);
+        });
+        
+        videoPlaylist.appendChild(item);
+      });
+
+      const activeVid = videoList[currentVideoIndex];
+      if (activeVid) {
+        activeVideoTitle.textContent = activeVid.title;
+        activeVideoDate.textContent = activeVid.date;
+        activeVideoDesc.textContent = activeVid.description;
+        
+        const playerContainer = document.getElementById('video-player-container');
+        const videoUrl = activeVid.videoUrl || '';
+        
+        // Helper to parse YouTube ID
+        const getYouTubeId = (url) => {
+          if (!url) return null;
+          const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+          const match = url.match(regExp);
+          return (match && match[2].length === 11) ? match[2] : null;
+        };
+        const ytId = getYouTubeId(videoUrl);
+        const isFb = videoUrl.includes('facebook.com/plugins') || videoUrl.includes('facebook.com/video');
+        
+        if (ytId) {
+          playerContainer.innerHTML = `
+            <iframe
+              src="https://www.youtube.com/embed/${ytId}?autoplay=0&rel=0"
+              title="${activeVid.title}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="width: 100%; height: 100%; border: none; display: block;"
+            ></iframe>
+          `;
+        } else if (isFb) {
+          playerContainer.innerHTML = `
+            <iframe
+              src="${videoUrl}"
+              title="${activeVid.title}"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowfullscreen
+              style="width: 100%; height: 100%; border: none; display: block;"
+            ></iframe>
+          `;
+        } else {
+          playerContainer.innerHTML = `
+            <video id="video-player" controls style="width: 100%; height: 100%; display: block; object-fit: contain;"></video>
+          `;
+          const videoElement = document.getElementById('video-player');
+          
+          if (videoUrl.includes('.m3u8')) {
+            if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+              const hls = new Hls();
+              hls.loadSource(videoUrl);
+              hls.attachMedia(videoElement);
+            } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+              videoElement.src = videoUrl;
+            }
+          } else {
+            // Direct MP4 or local fallback path
+            videoElement.src = videoUrl.startsWith('http') ? videoUrl : `videos/${videoUrl || activeVid.fileName || ''}`;
+          }
+        }
+      }
+    }
+
+    function selectVideo(index) {
+      currentVideoIndex = index;
+      renderVideoListUI();
+    }
+
+    // Dynamic Gallery Logic
+    let galleryList = [];
+    let activeFilter = 'all';
+
+    function loadGalleryMetadata() {
+      fetchConfigWithFallback('public/gallery/gallery.json', '/gallery/gallery.json', [
+        { id: 1, src: "public/gallery/anh1.jpg", category: "life", title: "Tân niên 2026" },
+        { id: 2, src: "public/gallery/anh2.jpg", category: "perform", title: "Show Yoko" },
+        { id: 3, src: "public/gallery/anh4.jpg", category: "liveshow", title: "Live show \"Cánh diều ước mơ\"" },
+        { id: 4, src: "public/gallery/S4U.jpg", category: "liveshow", title: "Live show \"S4U\"" },
+        { id: 5, src: "public/gallery/Chong_hoa.jpg", category: "liveshow", title: "Live show \"Chóng Hoa\"" },
+        { id: 6, src: "public/gallery/Sinh_nhat2025.jpg", category: "life", title: "Sinh nhật 2025" },
+        { id: 7, src: "public/gallery/Show_TV.jpg", category: "perform", title: "Show giáng sinh tại thư viện TDTU" }
+      ]).then(data => {
+        if (Array.isArray(data)) {
+          galleryList = data;
+          renderGalleryUI();
+        }
+      });
+    }
+
+    function renderGalleryUI() {
+      const grid = document.getElementById('gallery-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      const filtered = activeFilter === 'all' 
+        ? galleryList 
+        : galleryList.filter(item => item.category === activeFilter);
+        
+      filtered.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'glass-panel gallery-item scroll-reveal';
+        if (idx % 3 > 0) {
+          div.classList.add('delay-' + ((idx % 3) * 100));
+        }
+        div.setAttribute('data-cat', item.category);
+        div.style.position = 'relative';
+        div.style.borderRadius = 'var(--radius-md)';
+        div.style.overflow = 'hidden';
+        div.style.aspectRatio = '4/3';
+        div.style.cursor = 'pointer';
+        
+        div.innerHTML = `
+          <img src="${item.src}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition);" />
+          <div class="gallery-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(99, 58, 137, 0.75) 0%, rgba(232, 59, 77, 0.2) 100%); opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; text-align: left; transition: var(--transition);">
+            <span style="color: white; font-weight: 700; font-size: 1.1rem; font-family: var(--font-heading);">${item.title}</span>
+            <span style="color: rgba(255,255,255,0.8); font-size: 0.8rem; margin-top: 4px; display: flex; align-items: center; gap: 4px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg> Phóng to hình ảnh</span>
+          </div>
+        `;
+        
+        div.addEventListener('click', () => {
+          const lightbox = document.getElementById('lightbox');
+          const lightboxImg = document.getElementById('lightbox-img');
+          if (lightbox && lightboxImg) {
+            lightboxImg.src = item.src;
+            lightbox.style.display = 'flex';
+          }
+        });
+        
+        grid.appendChild(div);
+        if (window.revealObserver) {
+          window.revealObserver.observe(div);
+        }
+      });
+    }
+
+    // Dynamic Events Logic
+    let eventsList = [];
+
+    function loadEventsMetadata() {
+      fetchConfigWithFallback('public/events/events.json', '/events/events.json', [
+        {
+          title: "LIVESHOW 'CÁNH DIỀU ƯỚC MƠ'",
+          status: "Nổi bật",
+          image: "src/assets/anh4.jpg",
+          date: "11/05/2026",
+          location: "Sảnh D-E - TDTU",
+          desc: "Đêm nhạc liveshow thiện nguyện với mong muốn lan tỏa âm nhạc và tinh thần tích cực tới mọi người",
+          tagColor: "var(--color-primary)"
+        },
+        {
+          title: "LIVESHOW 'S4U'",
+          status: "Nổi bật",
+          image: "src/assets/S4U.jpg",
+          date: "19/06/2025",
+          location: "Hội trường 6M - TDTU",
+          desc: "Liveshow thường niên nơi tất cả ban trong câu lạc bộ cùng nhau tạo ra một liveshow để lan tỏa âm nhạc tới với toàn thể sinh viên TDTU ",
+          tagColor: "var(--color-primary)"
+        },
+        {
+          title: "LIVESHOW 'CHÓNG HOA'",
+          status: "Nổi bật",
+          image: "src/assets/Chong_hoa.jpg",
+          date: "06/12/2024",
+          location: "Hội trường 6M - TDTU",
+          desc: "Đêm nhạc thiện nguyện đầu tiên của câu lạc bộ.",
+          tagColor: "var(--color-primary)"
+        }
+      ]).then(data => {
+        if (Array.isArray(data)) {
+          eventsList = data;
+          renderEventsUI();
+        }
+      });
+    }
+
+    function renderEventsUI() {
+      const grid = document.getElementById('events-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      
+      eventsList.forEach((event, idx) => {
+        const div = document.createElement('div');
+        div.className = 'glass-panel event-card scroll-reveal';
+        if (idx > 0) {
+          div.classList.add('delay-' + (idx * 100));
+        }
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        div.style.overflow = 'hidden';
+        div.style.borderRadius = 'var(--radius-md)';
+        div.style.background = 'var(--color-bg-white)';
+        div.style.transition = 'var(--transition)';
+        
+        div.addEventListener('mouseenter', () => {
+          div.style.transform = 'translateY(-8px)';
+          div.style.boxShadow = 'var(--shadow-lg)';
+        });
+        div.addEventListener('mouseleave', () => {
+          div.style.transform = 'none';
+          div.style.boxShadow = 'var(--shadow-md)';
+        });
+        
+        div.innerHTML = `
+          <div style="position: relative; height: 240px; overflow: hidden;">
+            <img src="${event.image}" alt="${event.title}" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition);" class="zoom-img" />
+            <span style="position: absolute; top: 16px; left: 16px; background-color: ${event.tagColor}; color: white; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; font-family: var(--font-heading);">${event.status}</span>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1; text-align: left;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 16px; color: var(--color-text-title); line-height: 1.4;">${event.title}</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 16px; flex-grow: 1;">${event.desc}</p>
+            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--color-text);"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg><span>${event.date}</span></div>
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--color-text);"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>${event.location}</span></div>
+            </div>
+          </div>
+        `;
+        
+        const img = div.querySelector('.zoom-img');
+        if (img) {
+          img.addEventListener('mouseenter', () => { img.style.transform = 'scale(1.08)'; });
+          img.style.transition = 'var(--transition)';
+          img.addEventListener('mouseleave', () => { img.style.transform = 'scale(1)'; });
+        }
+        
+        grid.appendChild(div);
+        if (window.revealObserver) {
+          window.revealObserver.observe(div);
+        }
+      });
+    }
+
+
+    // Dynamic Merchandise Logic
+    let merchList = [];
+
+    function loadMerchandiseMetadata() {
+      fetchConfigWithFallback('public/merchandise/merchandise.json', '/merchandise/merchandise.json', [
+        {
+          id: 1,
+          name: "Áo đồng phục CLB Guitar G4U",
+          tag: "Ấn phẩm nội bộ",
+          description: "Mẫu áo thun đồng phục chính thức của G4U với chất liệu cotton cao cấp, thiết kế trẻ trung, năng động mang biểu tượng đặc trưng của CLB.",
+          image: "src/assets/merchandise/Ao_5.png"
+        },
+        {
+          id: 2,
+          name: "Dây đeo thẻ sinh viên G4U",
+          tag: "Phụ kiện độc quyền",
+          description: "Phụ kiện dây đeo thiết kế độc quyền của G4U, sử dụng làm dây đeo thẻ sinh viên, thể hiện cá tính yêu âm nhạc ở mọi nơi.",
+          image: "src/assets/merchandise/Day_6.png"
+        }
+      ]).then(data => {
+        if (Array.isArray(data)) {
+          merchList = data;
+          renderMerchandiseUI();
+        }
+      });
+    }
+
+    function renderMerchandiseUI() {
+      const grid = document.getElementById('merchandise-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      merchList.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'glass-panel glass-panel-hover scroll-reveal';
+        if (idx > 0) {
+          div.classList.add('delay-' + (idx * 100));
+        }
+        div.style.padding = '0';
+        div.style.borderRadius = 'var(--radius-lg)';
+        div.style.overflow = 'hidden';
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        div.style.justifyContent = 'space-between';
+        div.style.height = '100%';
+        div.style.border = '1px solid rgba(255, 255, 255, 0.6)';
+        div.style.boxShadow = 'var(--shadow-md)';
+        div.style.position = 'relative';
+        div.style.cursor = 'pointer';
+
+        div.innerHTML = `
+          <div style="position: relative; height: 280px; overflow: hidden; background: #faf5f8; display: flex; align-items: center; justify-content: center;">
+            <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition);" class="merch-img" />
+            
+            <!-- Hover overlay for zoom icon -->
+            <div class="merch-hover-overlay">
+              <div style="background: #fff; color: var(--color-primary); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+
+            <div style="position: absolute; top: 16px; right: 16px; background: rgba(232, 59, 77, 0.9); color: #fff; padding: 6px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; font-family: var(--font-heading); display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 10px rgba(232, 59, 77, 0.3); z-index: 3;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.293 8.293a2 2 0 0 0 2.828 0l7.172-7.172a2 2 0 0 0 0-2.828z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+              <span>Merch</span>
+            </div>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; text-align: left;">
+            <div>
+              <div style="display: inline-block; background: rgba(99, 58, 135, 0.08); color: var(--color-secondary); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; margin-bottom: 12px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.5px;">
+                ${item.tag || 'Ấn phẩm CLB'}
+              </div>
+              <h4 style="font-size: 1.2rem; color: var(--color-text-title); margin-bottom: 12px; font-weight: 700; line-height: 1.4;">${item.name}</h4>
+              <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 24px;">${item.description}</p>
+            </div>
+            <button class="btn btn-primary btn-view-detail" style="width: 100%; padding: 12px 0; font-size: 0.875rem; font-weight: 700;">Xem chi tiết sản phẩm</button>
+          </div>
+        `;
+
+        const openModal = () => {
+          const modal = document.getElementById('merch-modal');
+          const modalImg = document.getElementById('merch-modal-img');
+          const modalTag = document.getElementById('merch-modal-tag');
+          const modalName = document.getElementById('merch-modal-name');
+          const modalDesc = document.getElementById('merch-modal-desc');
+          
+          if (modal && modalImg && modalTag && modalName && modalDesc) {
+            modalImg.src = item.image;
+            modalImg.alt = item.name;
+            modalTag.textContent = item.tag || 'Ấn phẩm CLB';
+            modalName.textContent = item.name;
+            modalDesc.textContent = item.description;
+            modal.style.display = 'flex';
+          }
+        };
+
+        div.addEventListener('click', openModal);
+
+        const btnDetail = div.querySelector('.btn-view-detail');
+        if (btnDetail) {
+          btnDetail.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openModal();
+          });
+        }
+        
+        const img = div.querySelector('.merch-img');
+        if (img) {
+          div.addEventListener('mouseenter', () => { img.style.transform = 'scale(1.06)'; });
+          div.addEventListener('mouseleave', () => { img.style.transform = 'scale(1)'; });
+        }
+
+        grid.appendChild(div);
+      });
+    }
+
+    // Set up filter buttons events for dynamic loading
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active');
+          b.style.backgroundColor = 'transparent';
+          b.style.borderColor = 'var(--color-border)';
+          b.style.color = 'var(--color-text-title)';
+        });
+        btn.classList.add('active');
+        btn.style.backgroundColor = 'var(--color-primary)';
+        btn.style.borderColor = 'var(--color-primary)';
+        btn.style.color = '#fff';
+        
+        activeFilter = btn.getAttribute('data-category');
+        renderGalleryUI();
+      });
+    });
+
+    // Load configs on startup
+    loadVideosMetadata();
+    loadGalleryMetadata();
+    loadEventsMetadata();
+    loadMerchandiseMetadata();
+    loadRecruitmentConfig();
+
+    // Scroll progress bar logic
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      const progressBar = document.getElementById('scroll-progress-bar');
+      if (progressBar) {
+        progressBar.style.width = scrollPercent + '%';
+      }
+    });
+
+    // Initialize Global Reveal Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.05
+    };
+    window.revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Scroll reveal logic on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.scroll-reveal').forEach(el => {
+        window.revealObserver.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

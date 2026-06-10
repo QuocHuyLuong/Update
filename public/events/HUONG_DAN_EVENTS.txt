@@ -1,0 +1,25 @@
+HƯỚNG DẪN CẬP NHẬT SỰ KIỆN & HOẠT ĐỘNG NỔI BẬT CỦA G4U
+=============================================================
+
+Để thêm, sửa hoặc xóa các sự kiện hiển thị trên website, bạn thực hiện theo các bước sau:
+
+CÁC BƯỚC THỰC HIỆN:
+------------------
+Bước 1: Sao chép (copy) file hình ảnh đại diện của sự kiện mới (.jpg, .jpeg, .png, .webp) vào thư mục này:
+        Thư mục: `d:/Web/public/events/`
+
+Bước 2: Mở tệp tin `events.json` nằm trong thư mục này bằng Notepad hoặc bất kỳ phần mềm soạn thảo văn bản nào để chỉnh sửa.
+
+Bước 3: Thêm hoặc chỉnh sửa thông tin của các sự kiện. Định dạng mỗi sự kiện gồm các trường sau:
+
+  {
+    "title": "TIÊU ĐỀ SỰ KIỆN CỦA BẠN",
+    "status": "Trạng thái hiển thị (Ví dụ: Sắp diễn ra / Vừa diễn ra / Nổi bật)",
+    "image": "/events/ten_anh_cua_ban.jpg",
+    "date": "Ngày diễn ra (Ví dụ: 11/05/2026 hoặc Thứ Năm hàng tuần)",
+    "location": "Địa điểm tổ chức (Ví dụ: Hội trường 6B - Đại học Tôn Đức Thắng)",
+    "desc": "Mô tả ngắn gọn giới thiệu chi tiết về nội dung sự kiện.",
+    "tagColor": "Màu của nhãn trạng thái (Có thể dùng mã màu như #f59e0b hoặc biến CSS: var(--color-primary), var(--color-secondary))"
+  }
+
+Bước 4: Lưu lại file `events.json`. Trang web sẽ tự động đọc cấu hình mới và tải các sự kiện của câu lạc bộ lên giao diện một cách trực quan!

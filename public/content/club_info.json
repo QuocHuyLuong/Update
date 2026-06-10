@@ -1,0 +1,32 @@
+{
+  "about": {
+    "slogan": "\"Chúng mình là G4U\" – Trạm dừng chân của những tâm hồn yêu nhạc tại TDTU! 🎸",
+    "description": "Không chỉ là sân chơi rèn luyện kỹ năng cho các bạn đam mê Guitar, G4U còn là mái nhà chung rộng mở đón chào các tài năng Vocal, Cajon, Keyboard, Bass,... cùng nhau \"cháy\" hết mình trong các buổi sinh hoạt hàng tuần, hát giao lưu sảnh trường và cả những liveshow hoành tráng.",
+    "eventBrief": "Những \"tổng tư lệnh\" năng nổ, lo liệu từ A-Z để mọi chương trình luôn mượt mà và hoành tráng.",
+    "mediaBrief": "Đội ngũ \"phù thủy\" sáng tạo nội dung, hình ảnh giúp lan tỏa mạnh mẽ ngọn lửa đam mê của G4U.",
+    "prBrief": "Những \"đại sứ\" nhạy bén, chuyên săn \"deal\" xịn và giữ vai trò cầu nối vững chắc với các đối tác, nhà tài trợ.",
+    "closing": "Dù bạn đam mê tỏa sáng dưới ánh đèn sân khấu hay thích làm \"hậu phương\" vững chắc vạch định chiến lược, G4U luôn có một vị trí dành riêng cho bạn. Cùng gia nhập và viết nên thanh xuân rực rỡ tại TDTU nhé!"
+  },
+  "departments": {
+    "chuyen-mon": {
+      "name": "Ban Chuyên môn",
+      "subtitle": "Trình diễn nhạc cụ & Vocal",
+      "description": "Dành cho những bạn có năng khiếu về nhạc cụ và ca hát, cùng tình yêu sâu sắc với âm nhạc. Đây là nơi bạn sẽ được khám phá nhiều điều mới mẻ và thú vị trong thế giới âm nhạc và là cơ hội để bạn mang những thanh âm màu sắc đến với mọi người."
+    },
+    "su-kien": {
+      "name": "Ban Sự kiện",
+      "subtitle": "Ý tưởng & Quản lý hậu cần",
+      "description": "Phù hợp với các bạn đam mê và muốn thử sức trong việc lên ý tưởng, lập kế hoạch và tham gia tổ chức, điều phối các sự kiện - những con người đứng sau ánh đèn sân khấu, biến các ý tưởng thành hiện thực. Tại đây, bạn sẽ được trải nghiệm những khía cạnh đầy thú vị của lĩnh vực sự kiện."
+    },
+    "truyen-thong": {
+      "name": "Ban Truyền thông",
+      "subtitle": "Sáng tạo nội dung & Hình ảnh",
+      "description": "Dành cho các bạn có khả năng sáng tạo nội dung, viết lách, thiết kế, chỉnh sửa video, quay phim và muốn tự mình sản xuất các sản phẩm truyền thông. Đây là cơ hội để bạn khám phá và trải nghiệm thế giới đầy màu sắc của lĩnh vực media."
+    },
+    "doi-ngoai": {
+      "name": "Ban Đối ngoại",
+      "subtitle": "Kết nối cộng đồng & Đối tác",
+      "description": "Đại diện hình ảnh của CLB, chịu trách nhiệm kết nối với đối tác, doanh nghiệp và các tổ chức trong ngành âm nhạc. Ban Đối Ngoại không chỉ mang lại lợi ích về tài chính, truyền thông và chuyên môn mà còn tạo cơ hội nghề nghiệp cho thành viên CLB. Đồng thời, đây cũng là cầu nối gắn kết các thế hệ thành viên, góp phần xây dựng CLB phát triển bền vững."
+    }
+  }
+}

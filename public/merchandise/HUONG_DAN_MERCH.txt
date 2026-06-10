@@ -1,0 +1,40 @@
+HƯỚNG DẪN CẬP NHẬT & UPLOAD HÌNH ẢNH MERCHANDISE CỦA CLB G4U
+==========================================================
+
+Tệp cấu hình chính của mục Merchandise: `public/merchandise/merchandise.json`
+
+Để cập nhật sản phẩm Merchandise mới hoặc chỉnh sửa sản phẩm hiện có, bạn làm theo các bước sau:
+
+BƯỚC 1: Chuẩn bị hình ảnh sản phẩm
+---------------------------------
+1. Chuẩn bị ảnh sản phẩm (Áo thun, phím gảy, móc khóa, quà lưu niệm...) dưới dạng hình vuông hoặc tỉ lệ 4:3 để hiển thị đẹp nhất.
+2. Định dạng ảnh khuyên dùng: `.png` hoặc `.jpg`.
+3. Đặt tên file viết liền không dấu, ví dụ: `ao_thun_g4u.png`, `capo_g4u.jpg`.
+
+BƯỚC 2: Tải ảnh lên thư mục Merchandise trên GitHub
+--------------------------------------------------
+1. Truy cập kho lưu trữ (repository) của bạn trên GitHub.
+2. Nhấp mở thư mục `public/` -> `merchandise/`.
+3. Nhấp nút **Add file** ở góc trên bên phải -> chọn **Upload files**.
+4. Kéo thả các tệp hình ảnh sản phẩm mới của bạn vào đây.
+5. Cuộn xuống dưới bấm **Commit changes** để lưu ảnh lên GitHub.
+
+BƯỚC 3: Chỉnh sửa thông tin sản phẩm trong file JSON
+---------------------------------------------------
+1. Trên GitHub, nhấp mở file `public/merchandise/merchandise.json`.
+2. Bấm vào biểu tượng **cây bút chì** (Edit this file) để sửa.
+3. Cấu trúc một sản phẩm như sau (bạn có thể sao chép để thêm sản phẩm mới):
+   ```json
+   {
+     "id": 4,
+     "name": "Tên sản phẩm mới",
+     "price": "Giá bán (Ví dụ: 80.000 VNĐ)",
+     "description": "Mô tả ngắn gọn về chất liệu, thiết kế, công dụng của sản phẩm.",
+     "image": "/merchandise/ten_anh_ban_vừa_upload.png"
+   }
+   ```
+   *Lưu ý quan trọng:*
+   - Các sản phẩm ngăn cách nhau bằng dấu phẩy `,`.
+   - Sản phẩm cuối cùng trong danh sách KHÔNG được có dấu phẩy ở cuối khối `{}` trước dấu đóng ngoặc vuông `]`.
+   - Đường dẫn ảnh `"image"` bắt đầu bằng `/merchandise/` đi kèm tên chính xác của file ảnh bạn đã tải lên ở Bước 2.
+4. Bấm **Commit changes** để lưu. Trang web online sẽ tự động cập nhật sản phẩm mới sau khoảng 1-2 phút!

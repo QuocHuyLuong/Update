@@ -1,0 +1,28 @@
+HƯỚNG DẪN CẬP NHẬT HÌNH ẢNH MỤC THƯ VIỆN KHOẢNH KHẮC G4U
+=============================================================
+
+Để thay đổi hoặc cập nhật danh sách hình ảnh trong mục Thư viện khoảnh khắc G4U, bạn chỉ cần thực hiện 2 bước đơn giản sau:
+
+CÁC BƯỚC THỰC HIỆN:
+------------------
+Bước 1: Sao chép (copy) các file hình ảnh mới (.jpg, .jpeg, .png, .webp) vào thư mục này:
+        Thư mục: `d:/Web/public/gallery/`
+
+Bước 2: Mở tệp tin `gallery.json` nằm trong thư mục này bằng Notepad hoặc bất kỳ phần mềm soạn thảo văn bản nào để chỉnh sửa.
+
+Bước 3: Thêm hoặc chỉnh sửa thông tin của các hình ảnh. Định dạng mỗi hình ảnh gồm các trường sau:
+
+  {
+    "id": 1,
+    "src": "/gallery/ten_anh_cua_ban.jpg",
+    "category": "PHÂN_LOẠI",
+    "title": "Tiêu đề của hình ảnh khi rê chuột vào"
+  }
+
+* Lưu ý về các giá trị PHÂN_LOẠI (category):
+  - "liveshow": Nếu hình ảnh thuộc về các buổi liveshow quy mô lớn.
+  - "perform": Nếu hình ảnh thuộc về biểu diễn ban nhạc, acoustic.
+  - "life": Nếu hình ảnh thuộc về sinh hoạt chuyên môn, dã ngoại, sinh hoạt nội bộ.
+  - Hoặc bạn có thể phân loại theo bất cứ nhóm nào khác.
+
+Bước 4: Lưu lại file `gallery.json`. Website sẽ tự động tải dữ liệu mới và cập nhật hình ảnh trực tiếp lên Thư viện của CLB!
