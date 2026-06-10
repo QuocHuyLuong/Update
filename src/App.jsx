@@ -9,10 +9,12 @@ import MusicPlayer from './components/MusicPlayer';
 import Merchandise from './components/Merchandise';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ui/ScrollProgress';
 
 export default function App() {
   return (
     <>
+      <ScrollProgress />
       <Header />
       <main className="flex-grow">
         <Hero />

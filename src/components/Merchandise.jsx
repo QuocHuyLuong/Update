@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, Tag, ZoomIn } from 'lucide-react';
+import ScrollReveal from './ui/ScrollReveal';
 
 export default function Merchandise() {
   const [merchItems, setMerchItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
-    fetch('/merchandise/merchandise.json')
+    fetch('./merchandise/merchandise.json')
       .then(res => res.json())
       .then(data => {
         setMerchItems(data);
@@ -20,14 +21,14 @@ export default function Merchandise() {
             name: "Áo đồng phục CLB Guitar G4U",
             tag: "Ấn phẩm nội bộ",
             description: "Mẫu áo thun đồng phục chính thức của G4U với chất liệu cotton cao cấp, thiết kế trẻ trung, năng động mang biểu tượng đặc trưng của CLB.",
-            image: "/merchandise/Ao_5.png"
+            image: "./merchandise/Ao_5.png"
           },
           {
             id: 2,
             name: "Dây đeo thẻ sinh viên G4U",
             tag: "Phụ kiện độc quyền",
             description: "Phụ kiện dây đeo thiết kế độc quyền của G4U, sử dụng làm dây đeo thẻ sinh viên, thể hiện cá tính yêu âm nhạc ở mọi nơi.",
-            image: "/merchandise/Day_6.png"
+            image: "./merchandise/Day_6.png"
           }
         ]);
       });
@@ -49,98 +50,112 @@ export default function Merchandise() {
   return (
     <section id="merchandise" style={{ background: 'var(--color-bg-white)', padding: '100px 0' }}>
       <div className="container">
-        <div className="section-header">
-          <div className="glass-panel" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: 'var(--radius-full)', marginBottom: '20px', border: '1px solid rgba(232, 59, 77, 0.25)', background: 'rgba(232, 59, 77, 0.05)' }}>
-            <ShoppingBag size={16} color="var(--color-primary)" />
-            <span style={{ fontSize: '0.825rem', fontWeight: '700', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)', letterSpacing: '0.5px' }}>ĐỘC QUYỀN TỪ G4U GUITAR CLUB</span>
+        <ScrollReveal>
+          <div className="section-header">
+            <div className="glass-panel" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: 'var(--radius-full)', marginBottom: '20px', border: '1px solid rgba(232, 59, 77, 0.25)', background: 'rgba(232, 59, 77, 0.05)' }}>
+              <ShoppingBag size={16} color="var(--color-primary)" />
+              <span style={{ fontSize: '0.825rem', fontWeight: '700', color: 'var(--color-primary)', fontFamily: 'var(--font-heading)', letterSpacing: '0.5px' }}>ĐỘC QUYỀN TỪ G4U GUITAR CLUB</span>
+            </div>
+            <h2>
+              G4U <span className="gradient-text">Merchandise</span>
+            </h2>
+            <p>Sở hữu những ấn phẩm và quà lưu niệm mang đậm bản sắc của G4U để đồng hành cùng chúng mình trên mọi nẻo đường âm nhạc</p>
           </div>
-          <h2>
-            G4U <span className="gradient-text">Merchandise</span>
-          </h2>
-          <p>Sở hữu những ấn phẩm và quà lưu niệm mang đậm bản sắc của G4U để đồng hành cùng chúng mình trên mọi nẻo đường âm nhạc</p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid-2" style={{ maxWidth: '800px', margin: '0 auto', alignItems: 'stretch' }}>
           {merchItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="glass-panel glass-panel-hover"
-              style={{
-                padding: 0,
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                height: '100%',
-                border: '1px solid rgba(255, 255, 255, 0.6)',
-                boxShadow: 'var(--shadow-md)',
-                position: 'relative',
-                cursor: 'pointer'
-              }}
-              onClick={() => setSelectedItem(item)}
-            >
-              <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: '#faf5f8', display: 'flex', alignItems: 'center', justify: 'center' }}>
-                <img 
-                  src={item.image} 
-                  alt={item.name} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'var(--transition)' }} 
-                  className="merch-img"
-                />
-                
-                {/* Hover overlay for zoom icon */}
-                <div 
-                  className="merch-hover-overlay"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: 'rgba(99, 58, 135, 0.4)',
-                    opacity: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'var(--transition)',
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{ background: '#fff', color: 'var(--color-primary)', width: '44px', height: '44px', borderRadius: '50%', display: 'flex', alignItems: 'center', justify: 'center', boxShadow: 'var(--shadow-md)' }}>
-                    <ZoomIn size={20} />
+            <ScrollReveal key={item.id} direction="up" delay={index * 0.15}>
+              <motion.div
+                whileHover="hover"
+                whileTap="tap"
+                className="glass-panel"
+                style={{
+                  padding: 0,
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  border: '1px solid rgba(255, 255, 255, 0.6)',
+                  boxShadow: 'var(--shadow-md)',
+                  position: 'relative',
+                  cursor: 'pointer'
+                }}
+                variants={{
+                  hover: {
+                    y: -8,
+                    boxShadow: 'var(--shadow-lg)',
+                    borderColor: 'var(--color-primary)'
+                  }
+                }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                onClick={() => setSelectedItem(item)}
+              >
+                <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: '#faf5f8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <motion.img 
+                    src={item.image} 
+                    alt={item.name} 
+                    variants={{
+                      hover: { scale: 1.06 }
+                    }}
+                    transition={{ duration: 0.4 }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
+                  
+                  {/* Hover overlay for zoom icon */}
+                  <motion.div 
+                    variants={{
+                      hover: { opacity: 1 }
+                    }}
+                    transition={{ duration: 0.25 }}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      background: 'rgba(99, 58, 135, 0.4)',
+                      opacity: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 2
+                    }}
+                  >
+                    <div style={{ background: '#fff', color: 'var(--color-primary)', width: '44px', height: '44px', borderRadius: '50%', display: 'flex', alignItems: 'center', justify: 'center', boxShadow: 'var(--shadow-md)' }}>
+                      <ZoomIn size={20} />
+                    </div>
+                  </motion.div>
+  
+                  <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(232, 59, 77, 0.9)', color: '#fff', padding: '6px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '700', fontFamily: 'var(--font-heading)', display: 'flex', alignItems: 'center', gap: '4px', boxShadow: '0 4px 10px rgba(232, 59, 77, 0.3)', zIndex: 3 }}>
+                    <Tag size={12} />
+                    <span>Merch</span>
                   </div>
                 </div>
-
-                <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(232, 59, 77, 0.9)', color: '#fff', padding: '6px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '700', fontFamily: 'var(--font-heading)', display: 'flex', alignItems: 'center', gap: '4px', boxShadow: '0 4px 10px rgba(232, 59, 77, 0.3)', zIndex: 3 }}>
-                  <Tag size={12} />
-                  <span>Merch</span>
-                </div>
-              </div>
-
-              <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ display: 'inline-block', background: 'rgba(99, 58, 135, 0.08)', color: 'var(--color-secondary)', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '9999px', marginBottom: '12px', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {item.tag}
+  
+                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ display: 'inline-block', background: 'rgba(99, 58, 135, 0.08)', color: 'var(--color-secondary)', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '9999px', marginBottom: '12px', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      {item.tag}
+                    </div>
+                    <h4 style={{ fontSize: '1.2rem', color: 'var(--color-text-title)', marginBottom: '8px', fontWeight: '700', lineHeight: '1.4' }}>{item.name}</h4>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6', marginBottom: '20px' }}>{item.description}</p>
                   </div>
-                  <h4 style={{ fontSize: '1.2rem', color: 'var(--color-text-title)', marginBottom: '8px', fontWeight: '700', lineHeight: '1.4' }}>{item.name}</h4>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', lineHeight: '1.6', marginBottom: '20px' }}>{item.description}</p>
+                  <button 
+                    className="btn btn-primary" 
+                    style={{ width: '100%', padding: '12px 0', fontSize: '0.875rem', fontWeight: '700' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedItem(item);
+                    }}
+                  >
+                    Xem chi tiết sản phẩm
+                  </button>
                 </div>
-                <button 
-                  className="btn btn-primary" 
-                  style={{ width: '100%', padding: '12px 0', fontSize: '0.875rem', fontWeight: '700' }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedItem(item);
-                  }}
-                >
-                  Xem chi tiết sản phẩm
-                </button>
-              </div>
-            </motion.div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -243,12 +258,6 @@ export default function Merchandise() {
       </AnimatePresence>
 
       <style dangerouslySetInnerHTML={{__html: `
-        .glass-panel-hover:hover .merch-img {
-          transform: scale(1.06);
-        }
-        .glass-panel-hover:hover .merch-hover-overlay {
-          opacity: 1 !important;
-        }
         @media (max-width: 768px) {
           .merch-modal-grid {
             grid-template-columns: 1fr !important;

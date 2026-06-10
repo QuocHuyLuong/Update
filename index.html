@@ -1582,13 +1582,19 @@
         const res = await fetch(devUrl);
         if (res.ok && res.headers.get('content-type')?.includes('application/json')) {
           const data = await res.json();
-          // Adjust paths: prepend 'public' if path starts with '/'
+          // Adjust paths: prepend 'public/' to 'src' or 'image' if it is relative
           if (Array.isArray(data)) {
             const adjustedData = data.map(item => {
               const newItem = { ...item };
               for (const key in newItem) {
-                if (typeof newItem[key] === 'string' && newItem[key].startsWith('/')) {
-                  newItem[key] = 'public' + newItem[key];
+                if ((key === 'src' || key === 'image') && typeof newItem[key] === 'string') {
+                  if (newItem[key].startsWith('/')) {
+                    newItem[key] = 'public' + newItem[key];
+                  } else if (newItem[key].startsWith('./')) {
+                    newItem[key] = 'public/' + newItem[key].substring(2);
+                  } else if (!newItem[key].startsWith('public/') && !newItem[key].startsWith('http')) {
+                    newItem[key] = 'public/' + newItem[key];
+                  }
                 }
               }
               return newItem;
@@ -1597,8 +1603,14 @@
           } else if (data && typeof data === 'object') {
             const adjustedData = { ...data };
             for (const key in adjustedData) {
-              if (typeof adjustedData[key] === 'string' && adjustedData[key].startsWith('/')) {
-                adjustedData[key] = 'public' + adjustedData[key];
+              if ((key === 'src' || key === 'image') && typeof adjustedData[key] === 'string') {
+                if (adjustedData[key].startsWith('/')) {
+                  adjustedData[key] = 'public' + adjustedData[key];
+                } else if (adjustedData[key].startsWith('./')) {
+                  adjustedData[key] = 'public/' + adjustedData[key].substring(2);
+                } else if (!adjustedData[key].startsWith('public/') && !adjustedData[key].startsWith('http')) {
+                  adjustedData[key] = 'public/' + adjustedData[key];
+                }
               }
             }
             return adjustedData;
@@ -1946,7 +1958,7 @@
         {
           title: "LIVESHOW 'CÁNH DIỀU ƯỚC MƠ'",
           status: "Nổi bật",
-          image: "src/assets/anh4.jpg",
+          image: "public/events/anh4.jpg",
           date: "11/05/2026",
           location: "Sảnh D-E - TDTU",
           desc: "Đêm nhạc liveshow thiện nguyện với mong muốn lan tỏa âm nhạc và tinh thần tích cực tới mọi người",
@@ -1955,7 +1967,7 @@
         {
           title: "LIVESHOW 'S4U'",
           status: "Nổi bật",
-          image: "src/assets/S4U.jpg",
+          image: "public/events/S4U.jpg",
           date: "19/06/2025",
           location: "Hội trường 6M - TDTU",
           desc: "Liveshow thường niên nơi tất cả ban trong câu lạc bộ cùng nhau tạo ra một liveshow để lan tỏa âm nhạc tới với toàn thể sinh viên TDTU ",
@@ -1964,7 +1976,7 @@
         {
           title: "LIVESHOW 'CHÓNG HOA'",
           status: "Nổi bật",
-          image: "src/assets/Chong_hoa.jpg",
+          image: "public/events/Chong_hoa.jpg",
           date: "06/12/2024",
           location: "Hội trường 6M - TDTU",
           desc: "Đêm nhạc thiện nguyện đầu tiên của câu lạc bộ.",
@@ -2045,14 +2057,14 @@
           name: "Áo đồng phục CLB Guitar G4U",
           tag: "Ấn phẩm nội bộ",
           description: "Mẫu áo thun đồng phục chính thức của G4U với chất liệu cotton cao cấp, thiết kế trẻ trung, năng động mang biểu tượng đặc trưng của CLB.",
-          image: "src/assets/merchandise/Ao_5.png"
+          image: "public/merchandise/Ao_5.png"
         },
         {
           id: 2,
           name: "Dây đeo thẻ sinh viên G4U",
           tag: "Phụ kiện độc quyền",
           description: "Phụ kiện dây đeo thiết kế độc quyền của G4U, sử dụng làm dây đeo thẻ sinh viên, thể hiện cá tính yêu âm nhạc ở mọi nơi.",
-          image: "src/assets/merchandise/Day_6.png"
+          image: "public/merchandise/Day_6.png"
         }
       ]).then(data => {
         if (Array.isArray(data)) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flame, Zap, Palette, Handshake } from 'lucide-react';
+import { Flame, Zap, Palette, Handshake, Music, Users, TrendingUp, Heart, Star, Award, Activity, BookOpen, Calendar, Camera, Globe, Compass, Coffee, Play, Smile, Sparkles } from 'lucide-react';
+import ScrollReveal from './ui/ScrollReveal';
 
 
 export default function Departments() {
@@ -13,7 +14,7 @@ export default function Departments() {
       image: '/departments/chuyen_mon.jpg',
       gradient: 'linear-gradient(135deg, var(--color-secondary), var(--color-accent))',
       shadowColor: 'rgba(99, 58, 135, 0.25)',
-      icon: <Flame size={30} strokeWidth={2.2} />,
+      icon: /* DEPT_CHUYEN_MON_ICON_START */<Flame size={30} strokeWidth={2.2} />/* DEPT_CHUYEN_MON_ICON_END */,
       tasks: [
         'Dàn dựng, tập luyện các tiết mục hòa thanh nhạc cụ đa dạng (Guitar, Vocal, Cajon, Keyboard, Bass...) cho các sự kiện.',
         'Giao lưu đàn hát, chia sẻ kinh nghiệm biểu diễn và kiến thức âm nhạc thực chiến giữa các thành viên.',
@@ -28,7 +29,7 @@ export default function Departments() {
       image: '/departments/su_kien.jpg',
       gradient: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))',
       shadowColor: 'rgba(232, 59, 77, 0.25)',
-      icon: <Zap size={30} strokeWidth={2.2} />,
+      icon: /* DEPT_SU_KIEN_ICON_START */<Zap size={30} strokeWidth={2.2} />/* DEPT_SU_KIEN_ICON_END */,
       tasks: [
         'Lên ý tưởng kịch bản, viết kế hoạch và điều phối hoạt động hậu cần cho liveshow thường niên.',
         'Thiết kế, dàn dựng sân khấu, chuẩn bị đạo cụ biểu diễn và quản lý quy trình chạy chương trình.',
@@ -43,7 +44,7 @@ export default function Departments() {
       image: '/departments/truyen_thong.jpg',
       gradient: 'linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light))',
       shadowColor: 'rgba(99, 58, 135, 0.25)',
-      icon: <Palette size={30} strokeWidth={2.2} />,
+      icon: /* DEPT_TRUYEN_THONG_ICON_START */<Palette size={30} strokeWidth={2.2} />/* DEPT_TRUYEN_THONG_ICON_END */,
       tasks: [
         'Quay phim, chụp ảnh lưu giữ các hoạt động, sự kiện và sản xuất các video recap biểu diễn.',
         'Quản lý và biên tập nội dung trên các nền tảng mạng xã hội chính thức (Facebook Fanpage, Instagram, TikTok).',
@@ -58,7 +59,7 @@ export default function Departments() {
       image: '/departments/doi_ngoai.jpg',
       gradient: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-light))',
       shadowColor: 'rgba(168, 59, 104, 0.25)',
-      icon: <Handshake size={30} strokeWidth={2.2} />,
+      icon: /* DEPT_DOI_NGOAI_ICON_START */<Handshake size={30} strokeWidth={2.2} />/* DEPT_DOI_NGOAI_ICON_END */,
       tasks: [
         'Kết nối giao lưu nghệ thuật với các CLB, đội nhóm trong trường và các trường Đại học bạn.',
         'Liên hệ và làm việc với các nhà tài trợ, bảo trợ truyền thông để gây quỹ hoạt động cho CLB.',
@@ -70,12 +71,14 @@ export default function Departments() {
   return (
     <section id="departments" style={{ background: 'var(--color-bg-base)', padding: '80px 0' }}>
       <div className="container">
-        <div className="section-header">
-          <h2>
-            Các ban <span className="gradient-text-alt">Hoạt động tại G4U</span>
-          </h2>
-          <p>4 mảnh ghép hoàn hảo phối hợp chặt chẽ để tạo nên một tập thể câu lạc bộ chuyên nghiệp và tràn đầy năng lượng</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2>
+              Các ban <span className="gradient-text-alt">Hoạt động tại G4U</span>
+            </h2>
+            <p>4 mảnh ghép hoàn hảo phối hợp chặt chẽ để tạo nên một tập thể câu lạc bộ chuyên nghiệp và tràn đầy năng lượng</p>
+          </div>
+        </ScrollReveal>
 
         <div 
           className="grid-2" 
@@ -87,121 +90,117 @@ export default function Departments() {
           }}
         >
           {departmentsData.map((dept, index) => (
-            <motion.div
-              key={dept.id}
-              className="glass-panel dept-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              style={{
-                background: 'var(--color-bg-white)',
-                borderRadius: 'var(--radius-lg)',
-                padding: '0',
-                textAlign: 'left',
-                boxShadow: 'var(--shadow-md)',
-                border: '1px solid rgba(255, 255, 255, 0.6)',
-                display: 'flex',
-                flexDirection: 'column',
-                overflow: 'hidden',
-                justifyContent: 'space-between',
-                transition: 'var(--transition)'
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                {/* Department Image Banner */}
-                <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
-                  <img 
-                    src={dept.image} 
-                    alt={dept.name} 
-                    className="dept-image"
-                    style={{ 
-                      width: '100%', 
-                      height: 'auto', 
-                      display: 'block',
-                      transition: 'var(--transition)'
-                    }}
-                  />
-                </div>
+            <ScrollReveal key={dept.id} direction="up" delay={index * 0.12}>
+              <motion.div
+                whileHover="hover"
+                whileTap="tap"
+                className="glass-panel"
+                style={{
+                  background: 'var(--color-bg-white)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '0',
+                  textAlign: 'left',
+                  boxShadow: 'var(--shadow-md)',
+                  border: '1px solid rgba(255, 255, 255, 0.6)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  overflow: 'hidden',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  cursor: 'pointer'
+                }}
+                variants={{
+                  hover: {
+                    y: -8,
+                    boxShadow: 'var(--shadow-lg)',
+                    borderColor: 'var(--color-primary)'
+                  }
+                }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                  {/* Department Image Banner */}
+                  <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
+                    <motion.img 
+                      src={dept.image} 
+                      alt={dept.name} 
+                      variants={{
+                        hover: { scale: 1.04 }
+                      }}
+                      transition={{ duration: 0.4 }}
+                      style={{ 
+                        width: '100%', 
+                        height: 'auto', 
+                        display: 'block'
+                      }}
+                    />
+                  </div>
 
-                {/* Content Body */}
-                <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
-                  <div>
-                    {/* Header info */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
-                      {/* Glowing Icon wrapper */}
-                      <div 
-                        className="dept-icon-box"
-                        style={{
-                          width: '60px',
-                          height: '60px',
-                          borderRadius: '16px',
-                          background: dept.gradient,
-                          color: '#fff',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          boxShadow: `0 10px 20px ${dept.shadowColor}`,
-                          transition: 'var(--transition)',
-                          flexShrink: 0
-                        }}
-                      >
-                        {dept.icon}
-                      </div>
-
-                      <div>
-                        <h3 style={{ fontSize: '1.4rem', color: 'var(--color-text-title)', margin: 0, fontWeight: 800 }}>
-                          {dept.name}
-                        </h3>
-                        <span 
-                          style={{ 
-                            fontSize: '0.85rem', 
-                            fontWeight: '700', 
-                            color: 'var(--color-accent)',
-                            fontFamily: 'var(--font-heading)',
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.5px'
+                  {/* Content Body */}
+                  <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+                    <div>
+                      {/* Header info */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
+                        {/* Glowing Icon wrapper */}
+                        <motion.div 
+                          variants={{
+                            hover: { scale: 1.1, rotate: 4 }
+                          }}
+                          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                          style={{
+                            width: '60px',
+                            height: '60px',
+                            borderRadius: '16px',
+                            background: dept.gradient,
+                            color: '#fff',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: `0 10px 20px ${dept.shadowColor}`,
+                            flexShrink: 0
                           }}
                         >
-                          {dept.subtitle}
-                        </span>
+                          {dept.icon}
+                        </motion.div>
+
+                        <div>
+                          <h3 style={{ fontSize: '1.4rem', color: 'var(--color-text-title)', margin: 0, fontWeight: 800 }}>
+                            {dept.name}
+                          </h3>
+                          <span 
+                            style={{ 
+                              fontSize: '0.85rem', 
+                              fontWeight: '700', 
+                              color: 'var(--color-accent)',
+                              fontFamily: 'var(--font-heading)',
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.5px'
+                            }}
+                          >
+                            {dept.subtitle}
+                          </span>
+                        </div>
                       </div>
+
+                      {/* Description */}
+                      <p 
+                        style={{ 
+                          fontSize: '0.925rem', 
+                          color: 'var(--color-text)', 
+                          lineHeight: '1.6', 
+                          marginBottom: '24px' 
+                        }}
+                      >
+                        {dept.description}
+                      </p>
                     </div>
-
-                    {/* Description */}
-                    <p 
-                      style={{ 
-                        fontSize: '0.925rem', 
-                        color: 'var(--color-text)', 
-                        lineHeight: '1.6', 
-                        marginBottom: '24px' 
-                      }}
-                    >
-                      {dept.description}
-                    </p>
-
-                    {/* Tasks List removed as requested */}
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .dept-card {
-          position: relative;
-        }
-        .dept-card:hover {
-          transform: translateY(-8px);
-          box-shadow: var(--shadow-lg) !important;
-          border-color: var(--color-primary) !important;
-        }
-        .dept-card:hover .dept-icon-box {
-          transform: scale(1.1) rotate(4deg);
-        }
-      `}} />
     </section>
   );
 }

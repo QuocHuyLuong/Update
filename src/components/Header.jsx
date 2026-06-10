@@ -10,7 +10,7 @@ export default function Header() {
   const [recruitmentUrl, setRecruitmentUrl] = useState('');
 
   useEffect(() => {
-    fetch('/recruitment/recruitment.json')
+    fetch('./recruitment/recruitment.json')
       .then(res => res.json())
       .then(data => {
         if (data && data.googleFormUrl) {
