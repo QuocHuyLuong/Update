@@ -2159,6 +2159,9 @@
         }
 
         grid.appendChild(div);
+        if (window.revealObserver) {
+          window.revealObserver.observe(div);
+        }
       });
     }
 
