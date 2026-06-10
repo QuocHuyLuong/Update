@@ -805,21 +805,6 @@
         transform: none !important;
         transition: opacity 0.3s ease !important;
       }
-      #hero-scroll-indicator div div {
-        animation: none !important;
-      }
-      #hero-scroll-indicator span {
-        animation: none !important;
-      }
-    }
-
-    @keyframes scroll-pulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
-    }
-    @keyframes scroll-bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(12px); }
     }
   </style>
 </head>
@@ -934,13 +919,7 @@
         </div>
       </div>
 
-      <!-- Bouncing Scroll Indicator -->
-      <div id="hero-scroll-indicator" style="position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; z-index: 10;" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
-        <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--color-text-light); font-family: var(--font-heading); font-weight: 700; animation: scroll-pulse 2s infinite;">Cuộn xuống</span>
-        <div style="width: 20px; height: 34px; border-radius: 9999px; border: 2px solid rgba(232, 59, 77, 0.4); display: flex; justify-content: center; padding: 4px;">
-          <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); animation: scroll-bounce 1.5s infinite ease-in-out;"></div>
-        </div>
-      </div>
+
 
       <!-- Infinite Ticker -->
       <div class="infinite-slider-section">
@@ -1036,7 +1015,9 @@
         <div class="grid-3">
           <div class="glass-panel glass-panel-hover scroll-reveal delay-100" style="padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
             <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-bg-base); display: flex; align-items: center; justify-content: center;">
+              <!-- ABOUT_VAL1_ICON_START -->
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              <!-- ABOUT_VAL1_ICON_END -->
             </div>
             <h4 style="font-size: 1.2rem; color: var(--color-text-title);">Âm nhạc</h4>
             <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5;">Nơi đam mê được đánh thức, khơi dậy tinh thần sáng tạo và thăng hoa cùng những giai điệu acoustic mộc mạc.</p>
@@ -1044,7 +1025,9 @@
           
           <div class="glass-panel glass-panel-hover scroll-reveal delay-200" style="padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
             <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-bg-base); display: flex; align-items: center; justify-content: center;">
+              <!-- ABOUT_VAL2_ICON_START -->
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <!-- ABOUT_VAL2_ICON_END -->
             </div>
             <h4 style="font-size: 1.2rem; color: var(--color-text-title);">Kết nối</h4>
             <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5;">Xây dựng một mái nhà chung G4U, kết nối những trái tim yêu nhạc và tạo dựng những tình bạn đẹp đẽ thời sinh viên.</p>
@@ -1052,7 +1035,9 @@
 
           <div class="glass-panel glass-panel-hover scroll-reveal delay-300" style="padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;">
             <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-bg-base); display: flex; align-items: center; justify-content: center;">
+              <!-- ABOUT_VAL3_ICON_START -->
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              <!-- ABOUT_VAL3_ICON_END -->
             </div>
             <h4 style="font-size: 1.2rem; color: var(--color-text-title);">Phát triển</h4>
             <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5;">Không ngừng rèn luyện kỹ năng âm nhạc, hoàn thiện bản thân, tự tin thể hiện cá tính trên các sân khấu lớn.</p>
@@ -1118,9 +1103,11 @@
                 <div>
                   <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
                     <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(99, 58, 135, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <!-- DEPT_CHUYEN_MON_ICON_START -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
                       </svg>
+                      <!-- DEPT_CHUYEN_MON_ICON_END -->
                     </div>
                     <div>
                       <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Chuyên môn</h3>
@@ -1144,9 +1131,11 @@
                 <div>
                   <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
                     <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(232, 59, 77, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <!-- DEPT_SU_KIEN_ICON_START -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
                       </svg>
+                      <!-- DEPT_SU_KIEN_ICON_END -->
                     </div>
                     <div>
                       <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Sự kiện</h3>
@@ -1170,6 +1159,7 @@
                 <div>
                   <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
                     <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(99, 58, 135, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <!-- DEPT_TRUYEN_THONG_ICON_START -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
                         <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
@@ -1177,6 +1167,7 @@
                         <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
                         <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
                       </svg>
+                      <!-- DEPT_TRUYEN_THONG_ICON_END -->
                     </div>
                     <div>
                       <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Truyền thông</h3>
@@ -1200,6 +1191,7 @@
                 <div>
                   <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
                     <div class="dept-icon-box" style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(168, 59, 104, 0.25); transition: var(--transition); flex-shrink: 0;">
+                      <!-- DEPT_DOI_NGOAI_ICON_START -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m11 17 2 2a1 1 0 1 0 3-3" />
                         <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
@@ -1207,6 +1199,7 @@
                         <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
                         <path d="M3 4h8" />
                       </svg>
+                      <!-- DEPT_DOI_NGOAI_ICON_END -->
                     </div>
                     <div>
                       <h3 style="font-size: 1.4rem; color: var(--color-text-title); margin: 0; font-weight: 800;">Ban Đối ngoại</h3>
@@ -1262,7 +1255,7 @@
             </div>
 
             <!-- Video Playlist list -->
-            <div id="video-playlist" style="display: flex; flex-direction: column; gap: 8px; overflow-y: auto; max-height: 280px;">
+            <div id="video-playlist" style="display: flex; flex-direction: column; gap: 8px; overflow-y: auto; overflow-x: hidden; max-height: 280px;">
               <!-- Populated via Javascript -->
             </div>
           </div>
