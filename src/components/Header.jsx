@@ -35,7 +35,7 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     
     const isValidUrl = (url) => {
-      if (!url) return false;
+      if (!url || url.trim() === '') return false;
       const u = url.trim().toLowerCase();
       return u.startsWith("http://") || u.startsWith("https://");
     };
@@ -135,7 +135,7 @@ export default function Header() {
       )}
 
       {/* Recruitment Modal Overlay */}
-      {isRecruitmentModalOpen && (
+       {isRecruitmentModalOpen && (
         <div 
           className="fixed inset-0 bg-black/60 backdrop-blur-md z-[2000] flex items-center justify-center p-4"
           onClick={() => setIsRecruitmentModalOpen(false)}
@@ -178,7 +178,7 @@ export default function Header() {
             </a>
           </div>
         </div>
-      )}
+      )} 
 
       {/* Embedded Animations helper */}
       <style dangerouslySetInnerHTML={{__html: `

@@ -18,7 +18,7 @@ export default function Hero() {
     '🎵 Live Sessions',
     '🎤 Vocal & Chorus',
     '🥁 Cajon Beats',
-    '🎹 Keyboard Harmony',
+    '🎹 Keyboard',
     '⚡ Fingerstyle Guitar',
     '✨ Liveshows',
     '🤝 Jamming Đêm'
