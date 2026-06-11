@@ -6,26 +6,88 @@
     "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F800395309548923%2F&show_text=false&width=560&t=0",
     "date": "08/06/2026"
   },
-   
   {
     "id": 2,
+    "title": "Sắp Vào Đông",
+    "description": "Trình bày: Thu Thảo, Khánh Linh, Chí Tâm, Kỳ Vĩ, Trần Khánh, Chí Bảo, Yến Nhi",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F880030357707710%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  }, 
+  {
+    "id": 3,
     "title": "Em Không",
     "description": "Trình bày: Phương Nhi, Quang Minh",
     "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1206527531194464%2F&show_text=false&width=560&t=0",
     "date": "08/06/2026"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Tình đắng như ly cà phê",
     "description": "Trình bày: Hữu Phước, Ngọc Trân",
     "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F538936999099675%2F&show_text=false&width=560&t=0",
     "date": "08/06/2026"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Mẹ Yêu Con",
     "description": "Trình bày: Thái Bình, Gia Hưng, Chí Tâm, Quốc Bảo",
     "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F664211909751983%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 6,
+    "title": "Nếu Ngày Ấy",
+    "description": "Trình bày: Gia Hưng, Quốc Bảo",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F550442037584185%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 7,
+    "title": "MV 'Như Hoa Mùa Xuân'",
+    "description": "Trình bày: Nguyễn Hưng, Hoàng Nam, Gia Hân, Quỳnh Như, Huỳnh Bá, Quốc Bảo, Quang Minh, Hoàng Tú",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F1068607905066989%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 8,
+    "title": "Sẽ Ra Sao",
+    "description": "Trình bày: Hạo Nhiên, Quang Minh",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F864756345790957%2F&show_text=false&width=267&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 9,
+    "title": "Em Sẽ Quên",
+    "description": "Trình bày: Hoàng Quân, Gia Kiệt",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F1403419927011843%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 10,
+    "title": "Em Không Hiểu",
+    "description": "Trình bày: Vân Khánh, Quốc Huy",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F460460439764740%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 11,
+    "title": "Vườn Hoa Con Cá",
+    "description": "Trình bày: Thảo Ngân, Gia Kiệt",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F795861895770161%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 12,
+    "title": "MV 'Em Trang Trí'",
+    "description": "Trình bày: Gia Hân, Minh Quân, Thu Uyên, Trọng Nhân, Minh Nguyên, Vĩnh Kỳ",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F895743435105085%2F&show_text=false&width=560&t=0",
+    "date": "08/06/2026"
+  },
+  {
+    "id": 13,
+    "title": "Christmas Medley",
+    "description": "Trình bày: Trần Quỳnh, Hoàng Quân, Minh Khôi, Quốc Cường, Trần Vy, Thành Tín",
+    "videoUrl": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fclbguitarg4u.tdtu%2Fvideos%2F862047498175893%2F&show_text=false&width=560&t=0",
     "date": "08/06/2026"
   }
 ]
