@@ -1,7 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Tag, ZoomIn } from 'lucide-react';
+import { ShoppingBag, Tag, ZoomIn, X } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
+
+// 1. Tách dữ liệu tĩnh (fallback) ra khỏi component để tránh render lại và dễ bảo trì
+const FALLBACK_MERCH = [
+  {
+    id: 1,
+    name: "Áo đồng phục CLB Guitar G4U",
+    tag: "Ấn phẩm nội bộ",
+    description: "Mẫu áo thun đồng phục chính thức của G4U với chất liệu cotton cao cấp, thiết kế trẻ trung, năng động mang biểu tượng đặc trưng của CLB.",
+    image: "./merchandise/Ao_5.png"
+  },
+  {
+    id: 2,
+    name: "Dây đeo thẻ sinh viên G4U",
+    tag: "Phụ kiện độc quyền",
+    description: "Phụ kiện dây đeo thiết kế độc quyền của G4U, sử dụng làm dây đeo thẻ sinh viên, thể hiện cá tính yêu âm nhạc ở mọi nơi.",
+    image: "./merchandise/Day_6.png"
+  }
+];
 
 export default function Merchandise() {
   const [merchItems, setMerchItems] = useState([]);
@@ -15,36 +33,18 @@ export default function Merchandise() {
       })
       .catch(err => {
         console.warn("Could not load merchandise.json, using fallback.", err);
-        setMerchItems([
-          {
-            id: 1,
-            name: "Áo đồng phục CLB Guitar G4U",
-            tag: "Ấn phẩm nội bộ",
-            description: "Mẫu áo thun đồng phục chính thức của G4U với chất liệu cotton cao cấp, thiết kế trẻ trung, năng động mang biểu tượng đặc trưng của CLB.",
-            image: "./merchandise/Ao_5.png"
-          },
-          {
-            id: 2,
-            name: "Dây đeo thẻ sinh viên G4U",
-            tag: "Phụ kiện độc quyền",
-            description: "Phụ kiện dây đeo thiết kế độc quyền của G4U, sử dụng làm dây đeo thẻ sinh viên, thể hiện cá tính yêu âm nhạc ở mọi nơi.",
-            image: "./merchandise/Day_6.png"
-          }
-        ]);
+        // 2. Sử dụng hằng số fallback ở đây
+        setMerchItems(FALLBACK_MERCH);
       });
   }, []);
+
+  // Đóng modal khi bấm phím ESC
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        setSelectedItem(null);
-      }
+      if (e.key === 'Escape') setSelectedItem(null);
     };
-    if (selectedItem) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
+    if (selectedItem) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedItem]);
 
   return (
@@ -63,6 +63,7 @@ export default function Merchandise() {
           </div>
         </ScrollReveal>
 
+        {/* Danh sách Merchandise */}
         <div className="grid-2" style={{ maxWidth: '800px', margin: '0 auto', alignItems: 'stretch' }}>
           {merchItems.map((item, index) => (
             <ScrollReveal key={item.id} direction="up" delay={index * 0.15}>
@@ -70,6 +71,7 @@ export default function Merchandise() {
                 whileHover="hover"
                 whileTap="tap"
                 className="glass-panel"
+                onClick={() => setSelectedItem(item)} // Mở modal khi click vào thẻ
                 style={{
                   padding: 0,
                   borderRadius: 'var(--radius-lg)',
@@ -84,57 +86,43 @@ export default function Merchandise() {
                   cursor: 'pointer'
                 }}
                 variants={{
-                  hover: {
-                    y: -8,
-                    boxShadow: 'var(--shadow-lg)',
-                    borderColor: 'var(--color-primary)'
-                  }
+                  hover: { y: -8, boxShadow: 'var(--shadow-lg)', borderColor: 'var(--color-primary)' }
                 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => setSelectedItem(item)}
               >
+                {/* Phần hình ảnh */}
                 <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: '#faf5f8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <motion.img 
                     src={item.image} 
                     alt={item.name} 
-                    variants={{
-                      hover: { scale: 1.06 }
-                    }}
+                    variants={{ hover: { scale: 1.06 } }}
                     transition={{ duration: 0.4 }}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
                   
-                  {/* Hover overlay for zoom icon */}
+                  {/* Kính lúp (Zoom Icon) hiện khi hover */}
                   <motion.div 
-                    variants={{
-                      hover: { opacity: 1 }
-                    }}
+                    variants={{ hover: { opacity: 1 } }}
                     transition={{ duration: 0.25 }}
                     style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      background: 'rgba(99, 58, 135, 0.4)',
-                      opacity: 0,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      zIndex: 2
+                      position: 'absolute', inset: 0,
+                      background: 'rgba(99, 58, 135, 0.4)', opacity: 0,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2
                     }}
                   >
-                    <div style={{ background: '#fff', color: 'var(--color-primary)', width: '44px', height: '44px', borderRadius: '50%', display: 'flex', alignItems: 'center', justify: 'center', boxShadow: 'var(--shadow-md)' }}>
+                    <div style={{ background: '#fff', color: 'var(--color-primary)', width: '44px', height: '44px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-md)' }}>
                       <ZoomIn size={20} />
                     </div>
                   </motion.div>
-  
+
+                  {/* Tag Merch */}
                   <div style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(232, 59, 77, 0.9)', color: '#fff', padding: '6px 12px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '700', fontFamily: 'var(--font-heading)', display: 'flex', alignItems: 'center', gap: '4px', boxShadow: '0 4px 10px rgba(232, 59, 77, 0.3)', zIndex: 3 }}>
                     <Tag size={12} />
                     <span>Merch</span>
                   </div>
                 </div>
-  
+
+                {/* Phần nội dung text */}
                 <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
                   <div>
                     <div style={{ display: 'inline-block', background: 'rgba(99, 58, 135, 0.08)', color: 'var(--color-secondary)', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '9999px', marginBottom: '12px', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -146,10 +134,6 @@ export default function Merchandise() {
                   <button 
                     className="btn btn-primary" 
                     style={{ width: '100%', padding: '12px 0', fontSize: '0.875rem', fontWeight: '700' }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedItem(item);
-                    }}
                   >
                     Xem chi tiết sản phẩm
                   </button>
@@ -160,26 +144,16 @@ export default function Merchandise() {
         </div>
       </div>
 
-      {/* Merchandise Detail Modal */}
+      {/* --- MODAL CHI TIẾT SẢN PHẨM --- */}
       <AnimatePresence>
         {selectedItem && (
           <div 
             style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              background: 'rgba(20, 10, 28, 0.6)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
-              zIndex: 1100,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '16px'
+              position: 'fixed', inset: 0, width: '100%', height: '100%',
+              background: 'rgba(20, 10, 28, 0.6)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+              zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px'
             }}
-            onClick={() => setSelectedItem(null)}
+            onClick={() => setSelectedItem(null)} // Click ra ngoài để đóng
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -188,52 +162,36 @@ export default function Merchandise() {
               transition={{ duration: 0.3, cubicBezier: [0.16, 1, 0.3, 1] }}
               className="glass-panel"
               style={{
-                position: 'relative',
-                width: '100%',
-                maxWidth: '720px',
-                background: 'rgba(255, 255, 255, 0.95)',
-                borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden',
-                boxShadow: '0 24px 50px rgba(99, 58, 135, 0.2)',
-                border: '1px solid rgba(255, 255, 255, 0.8)',
-                maxHeight: '90vh',
-                display: 'flex',
-                flexDirection: 'column'
+                position: 'relative', width: '100%', maxWidth: '720px',
+                background: 'rgba(255, 255, 255, 0.95)', borderRadius: 'var(--radius-lg)',
+                overflow: 'hidden', boxShadow: '0 24px 50px rgba(99, 58, 135, 0.2)',
+                border: '1px solid rgba(255, 255, 255, 0.8)', maxHeight: '90vh',
+                display: 'flex', flexDirection: 'column'
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
+              {/* Nút Đóng (Sử dụng icon X của lucide-react) */}
               <button 
                 onClick={() => setSelectedItem(null)}
                 style={{
-                  position: 'absolute',
-                  top: '16px',
-                  right: '16px',
-                  background: 'rgba(20, 10, 28, 0.05)',
-                  border: 'none',
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  color: 'var(--color-text-title)',
-                  transition: 'var(--transition)',
-                  zIndex: 10
+                  position: 'absolute', top: '16px', right: '16px',
+                  background: 'rgba(20, 10, 28, 0.05)', border: 'none',
+                  width: '36px', height: '36px', borderRadius: '50%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer', color: 'var(--color-text-title)',
+                  transition: 'var(--transition)', zIndex: 10
                 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                <X size={20} />
               </button>
 
-              {/* Scrollable Container */}
               <div style={{ overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
                 <div className="merch-modal-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 0, alignItems: 'stretch' }}>
-                  {/* Image */}
-                  <div style={{ background: '#faf5f8', display: 'flex', alignItems: 'center', justify: 'center', overflow: 'hidden', height: '100%', minHeight: '320px' }}>
+                  {/* Hình ảnh bên trái */}
+                  <div style={{ background: '#faf5f8', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', height: '100%', minHeight: '320px' }}>
                     <img src={selectedItem.image} alt={selectedItem.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  {/* Info */}
+                  {/* Thông tin bên phải */}
                   <div style={{ padding: '36px', display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'left' }}>
                     <div style={{ display: 'inline-block', background: 'rgba(99, 58, 135, 0.08)', color: 'var(--color-secondary)', fontSize: '0.75rem', fontWeight: '700', padding: '4px 12px', borderRadius: '9999px', marginBottom: '16px', alignSelf: 'flex-start', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       {selectedItem.tag}
@@ -245,7 +203,7 @@ export default function Merchandise() {
                       href="#contact" 
                       onClick={() => setSelectedItem(null)}
                       className="btn btn-primary" 
-                      style={{ width: '100%', padding: '12px 0', fontSize: '0.875rem', fontWeight: '700', textAlign: 'center' }}
+                      style={{ width: '100%', padding: '12px 0', fontSize: '0.875rem', fontWeight: '700', textAlign: 'center', textDecoration: 'none' }}
                     >
                       Liên hệ giao lưu
                     </a>
@@ -257,6 +215,7 @@ export default function Merchandise() {
         )}
       </AnimatePresence>
 
+      {/* Xử lý responsive cho Modal */}
       <style dangerouslySetInnerHTML={{__html: `
         @media (max-width: 768px) {
           .merch-modal-grid {
