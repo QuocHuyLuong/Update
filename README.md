@@ -1,117 +1,200 @@
-# 🎸 G4U Website Migration
+# 🎸 G4U Website
 
-Chào mừng bạn đến với kho lưu trữ mã nguồn của CLB Guitar G4U. Dự án này đã được nâng cấp lên **React** kết hợp với **Vite** và **Tailwind CSS** nhằm mang lại trải nghiệm mượt mà và giao diện hiện đại hơn.
+Chào mừng bạn đến với kho lưu trữ mã nguồn của **CLB Guitar G4U**.
+
+Website được xây dựng bằng:
+
+* ⚛️ React
+* ⚡ Vite
+* 🎨 Tailwind CSS
+* ✨ Framer Motion
+
+Mục tiêu của tài liệu này là giúp bất kỳ thành viên nào, kể cả người mới, có thể chạy website trên máy cá nhân một cách nhanh chóng.
 
 ---
 
-## 🚀 Hướng dẫn khởi động (Dành cho Newbie)
+# 🚀 Hướng dẫn khởi động (Dành cho Newbie)
 
-Nếu bạn chưa từng làm việc với React hoặc Vite, đừng lo. Chỉ cần làm theo các bước dưới đây để chạy trang web trên máy tính cá nhân.
+## 1. Cài đặt Node.js
 
-### 1. Chuẩn bị môi trường
+Trước tiên, hãy cài đặt **Node.js phiên bản LTS** tại:
 
-* Đảm bảo bạn đã cài đặt **Node.js** (khuyến khích sử dụng phiên bản **LTS**).
-* Kiểm tra bằng cách mở Terminal và chạy:
+https://nodejs.org/
+
+Sau khi cài đặt xong, mở Terminal (Command Prompt hoặc PowerShell) và kiểm tra:
 
 ```bash
 node -v
+npm -v
 ```
 
-Nếu Terminal hiển thị phiên bản Node.js, bạn đã sẵn sàng.
+Nếu hiển thị phiên bản, nghĩa là bạn đã cài đặt thành công.
 
-### 2. Cài đặt các gói thư viện
+Ví dụ:
 
-Mở Terminal tại thư mục dự án và chạy lệnh sau để tải tất cả các thư viện cần thiết:
+```text
+v22.x.x
+10.x.x
+```
+
+---
+
+## 2. Cài đặt và chạy dự án (Khuyến khích)
+
+Dự án đã được chuẩn bị sẵn file script tự động.
+
+### Đối với Windows
+
+Chỉ cần:
+
+* Mở thư mục dự án
+* Double-click file:
+
+```text
+setup.bat
+```
+
+Script sẽ tự động:
+
+1. Cài đặt toàn bộ thư viện cần thiết.
+2. Khởi động website ở chế độ phát triển.
+3. Hiển thị địa chỉ truy cập trên trình duyệt.
+
+---
+
+## 3. Chạy thủ công (Nếu cần)
+
+### Bước 1: Cài đặt thư viện
+
+Mở Terminal tại thư mục dự án và chạy:
 
 ```bash
 npm install
 ```
 
-### 3. Chạy trang web ở chế độ phát triển
+Lệnh này sẽ tự động cài đặt toàn bộ package được khai báo trong `package.json`, bao gồm:
 
-Sau khi cài đặt hoàn tất, khởi động dự án bằng lệnh:
+### Dependencies
+
+* @radix-ui/react-slot
+* class-variance-authority
+* clsx
+* framer-motion
+* hls.js
+* lucide-react
+* motion
+* react
+* react-dom
+* react-use-measure
+* tailwind-merge
+
+### Dev Dependencies
+
+* @eslint/js
+* @types/react
+* @types/react-dom
+* @vitejs/plugin-react
+* autoprefixer
+* eslint
+* eslint-plugin-react-hooks
+* eslint-plugin-react-refresh
+* gh-pages
+* globals
+* postcss
+* tailwindcss
+* vite
+
+> Bạn không cần cài đặt từng package riêng lẻ. `npm install` sẽ tự động xử lý tất cả.
+
+---
+
+### Bước 2: Khởi động website
+
+Sau khi cài đặt hoàn tất:
 
 ```bash
 npm run dev
 ```
 
-Sau đó, giữ phím **Ctrl** và nhấp vào đường dẫn xuất hiện trong Terminal (thường là `http://localhost:5173/` hoặc `http://localhost:5174/`) để mở trang web trên trình duyệt.
+Terminal sẽ hiển thị địa chỉ tương tự:
+
+```text
+Local:   http://localhost:5173/
+```
+
+Giữ phím **Ctrl** và click vào đường dẫn Local để mở website.
 
 ---
 
-## 🛠 Cấu trúc dự án
+# 🛠 Cấu trúc dự án
 
 ```text
 src/
-├─ assets/       # Hình ảnh, icon và tài nguyên dùng trong React
-├─ components/   # Các component giao diện tái sử dụng
-├─ pages/        # Các trang chính của website
-└─ ...           # Các file mã nguồn khác
+├── assets/         # Hình ảnh, icon và tài nguyên
+├── components/     # Các component giao diện
+└── ...
 
-public/          # Tài nguyên tĩnh (JSON, hình ảnh bổ sung, ...)
-tailwind.config.js   # Cấu hình Tailwind CSS
-vite.config.js       # Cấu hình Vite
+public/             # Tài nguyên tĩnh
+tailwind.config.js  # Cấu hình Tailwind CSS
+vite.config.js      # Cấu hình Vite
+package.json        # Danh sách thư viện và scripts
 ```
 
 ---
 
-## 🌐 Deploy lên GitHub Pages
+# 💡 Xử lý sự cố thường gặp
 
-Dự án đã được cấu hình để triển khai tự động lên **GitHub Pages**.
+## `'node' is not recognized`
 
-### Build phiên bản mới
+Nguyên nhân:
 
-```bash
-npm run build
-```
+* Chưa cài Node.js.
+* Chưa khởi động lại máy sau khi cài.
 
-### Deploy lên nhánh `gh-pages`
+Cách khắc phục:
 
-```bash
-npm run deploy
-```
+* Cài Node.js bản LTS.
+* Restart máy tính hoặc mở lại Terminal.
 
 ---
 
-## 💡 Xử lý sự cố thường gặp
+## Lỗi khi cài đặt thư viện
 
-### Lỗi 404 sau khi deploy
+Thử xoá thư mục cài đặt và cài lại:
 
-Hãy kiểm tra các mục sau:
+### Windows
 
-* Trong **Settings → Pages** của repository GitHub, đảm bảo nguồn deploy được chọn là:
-
-  * Branch: `gh-pages`
-  * Folder: `/ (root)`
-* Kiểm tra file `vite.config.js` đã được cấu hình đúng:
-
-```js
-base: "/Update/";
-```
-
-> Thay `Update` bằng tên repository của bạn nếu sử dụng repository khác.
-
-### Giao diện bị vỡ (logo quá to, mất màu, CSS không hoạt động)
-
-Hãy thử:
-
-```bash
+```bat
+rmdir /s /q node_modules
+del package-lock.json
 npm install
-npm run build
-npm run deploy
 ```
 
-Sau đó tải lại trang bằng cách xoá cache trình duyệt hoặc nhấn:
+### macOS / Linux
 
-* Windows/Linux: `Ctrl + F5`
-* macOS: `Cmd + Shift + R`
-
----
-
-## ❤️ Đóng góp
-
-Mọi đóng góp để cải thiện website đều được chào đón. Nếu phát hiện lỗi hoặc có đề xuất mới, hãy tạo issue hoặc liên hệ với đội ngũ kỹ thuật của CLB.
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
 
 ---
 
-Cảm ơn bạn đã đồng hành cùng **G4U**! 🎶🎸
+## Không truy cập được localhost
+
+Hãy kiểm tra:
+
+* Terminal có còn đang chạy không.
+* Có thông báo lỗi màu đỏ hay không.
+* Tường lửa hoặc phần mềm diệt virus có chặn Node.js hay không.
+
+---
+
+# ❤️ Đóng góp
+
+Mọi đóng góp để cải thiện website đều được chào đón.
+
+Nếu phát hiện lỗi hoặc có ý tưởng mới, hãy liên hệ đội ngũ kỹ thuật của CLB hoặc tạo Issue trên GitHub.
+
+---
+
+Cảm ơn bạn đã đồng hành cùng **G4U**.

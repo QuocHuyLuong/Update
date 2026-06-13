@@ -148,7 +148,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Infinite Slider Section */}
+      {/* Infinite Slider Section */} 
       <div className="w-full mt-12 relative z-10 bg-[rgba(240,222,234,0.25)] py-6 border-y border-[rgba(240,222,234,0.6)]">
         
         {/* Thêm CSS Mask vào thẻ bọc ngoài cùng này */}
