@@ -4,13 +4,13 @@
     "name": "Áo đồng phục CLB Guitar G4U",
     "tag": "Ấn phẩm nội bộ",
     "description": "Mẫu áo thun đồng phục chính thức của G4U với chất liệu cotton cao cấp, thiết kế trẻ trung, năng động mang biểu tượng đặc trưng của CLB.",
-    "image": "merchandise/Ao_5.png"
+    "image": "merchandise/ao.png"
   },
   {
     "id": 2,
     "name": "Dây đeo thẻ sinh viên G4U",
     "tag": "Phụ kiện độc quyền",
     "description": "Phụ kiện dây đeo thiết kế độc quyền của G4U, sử dụng làm dây đeo thẻ sinh viên, thể hiện cá tính yêu âm nhạc ở mọi nơi.",
-    "image": "merchandise/Day_6.png"
+    "image": "merchandise/day.png"
   }
 ]
