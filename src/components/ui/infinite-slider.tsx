@@ -10,6 +10,8 @@ type InfiniteSliderProps = {
   duration?: number;
   durationOnHover?: number;
   direction?: 'horizontal' | 'vertical';
+  speedOnHover?: number;
+  speed?: number;
   reverse?: boolean;
   className?: string;
 };

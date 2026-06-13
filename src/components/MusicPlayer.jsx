@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Video, Calendar, FileText } from 'lucide-react';
+import { motion } from "framer-motion";
 import Hls from 'hls.js';
 import ScrollReveal from './ui/ScrollReveal';
 
@@ -87,7 +88,7 @@ export default function MusicPlayer() {
             <h2>
               G4U <span className="gradient-text">Studio</span>
             </h2>
-            <p>Trải nghiệm những sản phẩm Live Session cực chất của G4Uer</p>
+            <p>Trải nghiệm những sản phẩm Live Session của G4U-ers</p>
           </div>
         </ScrollReveal>
 
@@ -260,10 +261,6 @@ export default function MusicPlayer() {
             </div>
           </ScrollReveal>
         </div>
-      </div>
-      
-      <div style={{ marginTop: '24px', fontSize: '0.85rem', color: 'var(--color-text-light)' }}>
-        <p>💡 Chọn một clip từ danh sách bên phải để phát trực tiếp buổi biểu diễn Live Session.</p>
       </div>
     </section>
   );

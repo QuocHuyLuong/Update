@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import Link from 'next/link'
+// import a from 'next/link'
 import { Button } from '@/components/ui/button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
@@ -25,10 +25,10 @@ export function HeroSection() {
                                         asChild
                                         size="lg"
                                         className="h-12 rounded-full pl-5 pr-3 text-base">
-                                        <Link href="#link">
+                                        <a href="#link">
                                             <span className="text-nowrap">Start Building</span>
                                             <ChevronRight className="ml-1" />
-                                        </Link>
+                                        </a>
                                     </Button>
                                     <Button
                                         key={2}
@@ -36,9 +36,9 @@ export function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
-                                        <Link href="#link">
+                                        <a href="#link">
                                             <span className="text-nowrap">Request a demo</span>
-                                        </Link>
+                                        </a>
                                     </Button>
                                 </div>
                             </div>
@@ -189,12 +189,12 @@ const HeroHeader = () => {
                         key={1}
                         className={cn('relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0 lg:py-6', scrolled && 'lg:py-4')}>
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-                            <Link
+                            <a
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
                                 <Logo />
-                            </Link>
+                            </a>
 
                             <button
                                 onClick={() => setMenuState(!menuState)}
@@ -208,11 +208,11 @@ const HeroHeader = () => {
                                 <ul className="flex gap-8 text-sm">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
-                                            <Link
+                                            <a
                                                 href={item.href}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
-                                            </Link>
+                                            </a>
                                         </li>
                                     ))}
                                 </ul>
@@ -224,11 +224,11 @@ const HeroHeader = () => {
                                 <ul className="space-y-6 text-base">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
-                                            <Link
+                                            <a
                                                 href={item.href}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
-                                            </Link>
+                                            </a>
                                         </li>
                                     ))}
                                 </ul>
@@ -238,16 +238,16 @@ const HeroHeader = () => {
                                     asChild
                                     variant="outline"
                                     size="sm">
-                                    <Link href="#">
+                                    <a href="#">
                                         <span>Login</span>
-                                    </Link>
+                                    </a>
                                 </Button>
                                 <Button
                                     asChild
                                     size="sm">
-                                    <Link href="#">
+                                    <a href="#">
                                         <span>Sign Up</span>
-                                    </Link>
+                                    </a>
                                 </Button>
                             </div>
                         </div>
