@@ -1,6 +1,6 @@
 import React from "react";
 import { Heart } from "lucide-react";
-import logo from "../assets/Logo.jpg";
+import logo from "../assets/logo.jpg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

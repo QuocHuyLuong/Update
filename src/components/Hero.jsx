@@ -1,27 +1,44 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Play, ArrowRight, Sparkles, CalendarDays, Activity, Users, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { InfiniteSlider } from '@/components/ui/infinite-slider';
-import { ProgressiveBlur } from '@/components/ui/progressive-blur';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Play,
+  ArrowRight,
+  Sparkles,
+  CalendarDays,
+  Activity,
+  Users,
+  Heart,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
 export default function Hero() {
   const stats = [
-    { value: '2011', label: 'Năm thành lập', icon: <CalendarDays size={18} /> },
-    { value: '10+', label: 'Năm hoạt động', icon: <Activity size={18} /> },
-    { value: '500+', label: 'Thành viên', icon: <Users size={18} /> },
-    { value: '18K+', label: 'Người theo dõi', icon: <Heart size={18} /> }
+    { value: "2011", label: "Năm thành lập", icon: <CalendarDays size={18} /> },
+    { value: "15", label: "Năm hoạt động", icon: <Activity size={18} /> },
+    { value: "100+", label: "Thành viên", icon: <Users size={18} /> },
+    { value: "18K+", label: "Người theo dõi", icon: <Heart size={18} /> },
   ];
 
   const highlights = [
-    '🎸 Acoustic Live', '🎵 Live Sessions', '🎤 Vocal & Chorus', '🥁 Cajon Beats',
-    '🎹 Keyboard', '✨ Liveshows', '🤝 Jamming Đêm'
+    "🎸 Acoustic Live",
+    "🎵 Live Sessions",
+    "🎤 Vocal & Chorus",
+    "🥁 Cajon Beats",
+    "🎹 Keyboard",
+    "✨ Liveshows",
+    "🤝 Jamming Sessions",
+    // --- Các tag mới được thêm vào ---
+    "🌟 Open Mic Night",
+    "🎧 Studio Recording",
+    "🎼 Fingerstyle",
+    "🎉 Giao Lưu Sự Kiện",
   ];
 
   return (
     // Xóa màu nền fix cứng bg-[#fcf6f9] để hình nền của body ở index.css hiện lên
     <main className="overflow-x-hidden w-full min-h-screen relative flex flex-col justify-between pt-32 pb-12">
-      
       {/* Background Video Layer - Làm cho trong trẻo giống bản gốc */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(252,246,249,0.85)] via-[rgba(252,246,249,0.7)] to-[var(--color-bg-base)] z-10 pointer-events-none" />
@@ -38,7 +55,6 @@ export default function Hero() {
       {/* Main Content Hero */}
       <div className="container mx-auto px-6 relative z-10 flex-grow flex items-center">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          
           {/* Sparkle Badge - Đổi sang màu hồng nhạt của G4U */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -72,7 +88,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-balance text-base sm:text-lg text-[var(--color-text)] max-w-2xl mb-10 leading-relaxed"
           >
-            Chào mừng bạn đến với mái nhà chung G4U. Chúng mình cùng chung nhịp đập âm nhạc, nơi những tiếng đàn guitar hòa nhịp với nhiệt huyết tuổi trẻ của sinh viên TDTU.
+            Chào mừng bạn đến với mái nhà chung G4U. Chúng mình cùng chung nhịp
+            đập âm nhạc, nơi những tiếng đàn guitar hòa nhịp với nhiệt huyết
+            tuổi trẻ của sinh viên TDTU.
           </motion.p>
 
           {/* Action Buttons - Khôi phục class btn-primary thần thánh */}
@@ -82,16 +100,16 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center gap-4 mb-14"
           >
-            <a 
-              href="#music-room" 
+            <a
+              href="#music-room"
               className="btn btn-primary h-12 px-8 text-sm font-bold shadow-[var(--shadow-glow)]"
             >
               <span>Nghe G4U Đàn</span>
               <Play size={14} fill="white" />
             </a>
-            
-            <a 
-              href="#about" 
+
+            <a
+              href="#about"
               className="btn btn-secondary h-12 px-8 text-sm font-bold bg-white"
             >
               <span>Tìm hiểu về CLB</span>
@@ -99,16 +117,25 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Stats Bar - Dùng class glass-panel */}
+          {/* Stats Bar - Đã bỏ gap-4 và thêm viền ngang cho bản mobile */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full max-w-3xl grid grid-cols-2 md:grid-cols-4 gap-4 glass-panel p-6 rounded-[24px]"
+            className="w-full max-w-3xl grid grid-cols-2 md:grid-cols-4 glass-panel p-4 sm:p-6 rounded-[24px]"
           >
             {stats.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center justify-center p-2 text-center border-r last:border-0 border-[var(--color-border)] md:border-r">
-                <div className="text-primary mb-1">{item.icon}</div>
+              <div
+                key={idx}
+                // Thay p-2 thành py-6 px-2 để có không gian thở khi có viền ngang
+                className={`flex flex-col items-center justify-center py-6 px-2 text-center border-[var(--color-border)]
+                  ${idx === 0 ? "border-r border-b md:border-b-0" : ""}
+                  ${idx === 1 ? "border-b md:border-b-0 md:border-r" : ""}
+                  ${idx === 2 ? "border-r" : ""}
+                  ${idx === 3 ? "" : ""}
+                `}
+              >
+                <div className="text-primary mb-2">{item.icon}</div>
                 <span className="text-2xl sm:text-3xl font-extrabold text-[var(--color-text-title)] font-heading leading-tight">
                   {item.value}
                 </span>
@@ -118,14 +145,21 @@ export default function Hero() {
               </div>
             ))}
           </motion.div>
-
         </div>
       </div>
 
       {/* Infinite Slider Section */}
       <div className="w-full mt-12 relative z-10 bg-[rgba(240,222,234,0.25)] py-6 border-y border-[rgba(240,222,234,0.6)]">
-        <div className="relative max-w-7xl mx-auto px-6 overflow-hidden">
-          <InfiniteSlider speed={35} gap={48} className="w-full">
+        
+        {/* Thêm CSS Mask vào thẻ bọc ngoài cùng này */}
+        <div 
+          className="relative max-w-7xl mx-auto overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+          }}
+        >
+          <InfiniteSlider speed={40} speedOnHover={15} gap={48} className="w-full py-2">
             {highlights.map((text, idx) => (
               <div 
                 key={idx}
@@ -138,19 +172,8 @@ export default function Hero() {
             ))}
           </InfiniteSlider>
 
-          {/* Blur Overlays */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--color-bg-base)] to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--color-bg-base)] to-transparent pointer-events-none" />
-          <ProgressiveBlur
-            className="pointer-events-none absolute left-0 top-0 h-full w-24"
-            direction="left"
-            blurIntensity={1.2}
-          />
-          <ProgressiveBlur
-            className="pointer-events-none absolute right-0 top-0 h-full w-24"
-            direction="right"
-            blurIntensity={1.2}
-          />
+          {/* CHÚ Ý: Toàn bộ thẻ div bg-gradient và ProgressiveBlur cũ đã bị XÓA BỎ ở đây */}
+          
         </div>
       </div>
     </main>
