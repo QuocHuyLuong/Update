@@ -1,4 +1,4 @@
 window.g4uRecruitmentConfig = {
   // paste url here
-  "googleFormUrl": ""
+  "googleFormUrl": "https://www.facebook.com/"
 };
