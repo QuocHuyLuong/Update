@@ -1,0 +1,25 @@
+HƯỚNG DẪN THÊM VIDEO LIVE SESSION VÀO WEBSITE CLB G4U (BẰNG CÁCH NHÚNG LINK)
+========================================================================
+
+Để thêm hoặc thay đổi một video Live Session hiển thị trên website, bạn không cần phải copy các file video .mp4 nặng nề vào mã nguồn nữa. Thay vào đó, bạn chỉ cần nhúng đường dẫn (link) video trực tuyến vào file cấu hình.
+
+Hệ thống hỗ trợ 3 định dạng link video sau:
+1. Link YouTube (Ví dụ: https://www.youtube.com/watch?v=dQw4w9WgXcQ hoặc https://youtu.be/dQw4w9WgXcQ)
+2. Luồng phát trực tiếp HLS (Định dạng .m3u8, ví dụ link Mux của bạn: https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8)
+3. Link trực tiếp file video (.mp4 host online ở nguồn khác)
+
+CÁC BƯỚC THỰC HIỆN:
+------------------
+Bước 1: Mở tệp tin `videos.json` nằm trong thư mục này (`d:/Web/public/videos/`) bằng Notepad hoặc bất kỳ phần mềm soạn thảo văn bản nào.
+
+Bước 2: Thêm một khối thông tin video mới vào cuối danh sách (ngăn cách với khối trước bằng dấu phẩy `,`). Cấu trúc khối như sau:
+
+  {
+    "id": 3,
+    "title": "Tên bài hát / Tiêu đề Live Session",
+    "description": "Mô tả ngắn gọn về bài hát hoặc đêm nhạc Live Session.",
+    "videoUrl": "ĐƯỜNG_DẪN_VIDEO_CỦA_BẠN",
+    "date": "Ngày diễn hoặc ngày ghi hình (Ví dụ: 07/06/2026)"
+  }
+
+Bước 3: Lưu lại file `videos.json`. Website sẽ tự động đọc lại cấu hình và cập nhật danh sách video mới trực tiếp lên giao diện Phòng nhạc!

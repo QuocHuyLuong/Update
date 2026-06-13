@@ -1,0 +1,3 @@
+Hướng dẫn cách cấu hình URL:
+- Copy & paste URL Google Form vào file recruitment.js khi có form ứng tuyển.
+- Lưu thay đổi và kiểm tra lại trang tuyển dụng để đảm bảo form hoạt động đúng.
